@@ -1,0 +1,372 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{0e5fa0bb-99b7-4093-95c8-b28f9dcde7A9}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>x86-OSSBuild-GStreamer-Plugins-Good</OutputName>
+    <OutputType>Module</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IncludeSearchPaths>
+    </IncludeSearchPaths>
+    <Name>Plugins-Good</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\..\..\..\..\..\Deployment\GStreamer\Windows\x86\Merge Modules\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;TOP=$(ProjectDir)..\..\..\..\..\..\..\;AppRoot=$(ProjectDir)..\..\..\..\;InstallRoot=$(ProjectDir)..\..\..\</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+    <SuppressSpecificWarnings>1101;1102</SuppressSpecificWarnings>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\..\..\..\..\Deployment\GStreamer\Windows\x86\Merge Modules\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TOP=$(ProjectDir)..\..\..\..\..\..\..\;AppRoot=$(ProjectDir)..\..\..\..\;InstallRoot=$(ProjectDir)..\..\..\</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+    <SuppressIces>
+    </SuppressIces>
+    <SuppressSpecificWarnings>1101;1102</SuppressSpecificWarnings>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\..\..\GUIDs.wxi">
+      <Link>Shared\GUIDs.wxi</Link>
+    </Content>
+    <Content Include="..\..\..\Properties.wxi">
+      <Link>Shared\Properties.wxi</Link>
+    </Content>
+    <Content Include="..\..\..\Versions.wxi">
+      <Link>Shared\Versions.wxi</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Shared" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="OSSBuildExtensions">
+      <HintPath>..\..\..\..\..\..\..\Shared\WiX\OSSBuildExtensions.dll</HintPath>
+      <Name>OSSBuildExtensions</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Plugins-Good.wxs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\flac.vcproj">
+      <Name>gstflac</Name>
+      <Project>{4b47a303-1d81-4c32-aa8d-38add0dc2f50}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\gdkpixbuf.vcproj">
+      <Name>gstgdkpixbuf</Name>
+      <Project>{7955fd29-79e6-49eb-fd1f-653f0ef70d40}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstcairo.vcproj">
+      <Name>gstcairo</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92004}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstjpeg.vcproj">
+      <Name>gstjpeg</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92006}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstpng.vcproj">
+      <Name>gstpng</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92005}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstsouphttpsrc.vcproj">
+      <Name>gstsouphttpsrc</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92008}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstspeex.vcproj">
+      <Name>gstspeex</Name>
+      <Project>{1d38f5c6-a7af-4bc2-a776-af91ae1f7cf9}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\ext\libgstwavpack.vcproj">
+      <Name>gstwavpack</Name>
+      <Project>{b9551c49-79e6-493b-8d1f-653faec7adcd}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\audioparsers.vcproj">
+      <Name>gstaudioparsers</Name>
+      <Project>{f67dde81-bb23-4fc9-9d7d-c312fe857f15}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\imagefreeze.vcproj">
+      <Name>gstimagefreeze</Name>
+      <Project>{c64101b3-2e61-4033-a16c-d4a8676b9a54}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\isomp4.vcproj">
+      <Name>gstisomp4</Name>
+      <Project>{2f33f9ed-c725-451a-bc3f-304d56ab8e6a}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstalaw.vcproj">
+      <Name>gstalaw</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a19}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstalpha.vcproj">
+      <Name>gstalpha</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a03}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstalphacolor.vcproj">
+      <Name>gstalphacolor</Name>
+      <Project>{5bc4473b-ef01-4b1b-b627-f70df4f92f20}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstapetag.vcproj">
+      <Name>gstapetag</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a04}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstaudiofx.vcproj">
+      <Name>gstaudiofx</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a05}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstauparse.vcproj">
+      <Name>gstauparse</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a06}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstautodetect.vcproj">
+      <Name>gstautodetect</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a07}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstavi.vcproj">
+      <Name>gstavi</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a08}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstcutter.vcproj">
+      <Name>gstcutter</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a09}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstdebug.vcproj">
+      <Name>gstdebug</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a10}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstdeinterlace.vcproj">
+      <Name>gstdeinterlace</Name>
+      <Project>{f3a7c701-0acc-0bb0-ce27-aa0dffff0026}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgsteffectv.vcproj">
+      <Name>gsteffectv</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a11}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstequalizer.vcproj">
+      <Name>gstequalizer</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a12}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstflv.vcproj">
+      <Name>gstflv</Name>
+      <Project>{f3a7c701-0acc-0bb0-ce27-aa0dffff0031}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstflxdec.vcproj">
+      <Name>gstflxdec</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a13}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgsticydemux.vcproj">
+      <Name>gsticydemux</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a16}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstid3demux.vcproj">
+      <Name>gstid3demux</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a17}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstinterleave.vcproj">
+      <Name>gstinterleave</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a18}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstlevel.vcproj">
+      <Name>gstlevel</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a20}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstmatroska.vcproj">
+      <Name>gstmatroska</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a21}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstmonoscope.vcproj">
+      <Name>gstmonoscope</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a22}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstmulaw.vcproj">
+      <Name>gstmulaw</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a38}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstmultifile.vcproj">
+      <Name>gstmultifile</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a23}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstmultipart.vcproj">
+      <Name>gstmultipart</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a24}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstnavigationtest.vcproj">
+      <Name>gstnavigationtest</Name>
+      <Project>{67f3da88-063e-4211-a851-5a05b638ae4d}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstreplaygain.vcproj">
+      <Name>gstreplaygain</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a26}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstrtpmanager.vcproj">
+      <Name>gstrtpmanager</Name>
+      <Project>{f3a7c701-0acc-0bb0-ce27-aa0dffff0048}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstsmpte.vcproj">
+      <Name>gstsmpte</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a29}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstspectrum.vcproj">
+      <Name>gstspectrum</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a30}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstudp.vcproj">
+      <Name>gstudp</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a31}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstvideobox.vcproj">
+      <Name>gstvideobox</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a32}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstvideocrop.vcproj">
+      <Name>gstvideocrop</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a33}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstvideomixer.vcproj">
+      <Name>gstvideomixer</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a35}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstwaveenc.vcproj">
+      <Name>gstwaveenc</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a36}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgstwavparse.vcproj">
+      <Name>gstwavparse</Name>
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f92a37}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\libgsty4menc.vcproj">
+      <Name>gsty4menc</Name>
+      <Project>{f3a7c701-0acc-0bb0-ce27-aa0dffff0019}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\rtp.vcproj">
+      <Name>gstrtp _GStreamer\Plugins\Good\gst\gstrtp_</Name>
+      <Project>{f456161a-e627-43c7-b372-a82fdf9845be}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\rtsp.vcproj">
+      <Name>gstrtsp _GStreamer\Plugins\Good\gst\gstrtsp_</Name>
+      <Project>{d0cd9705-8ca2-40db-a50c-fc7001756dd7}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\shapewipe.vcproj">
+      <Name>gstshapewipe</Name>
+      <Project>{0bb26e1d-c0b4-469c-8097-91ab95b909f4}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\gst\videofilter.vcproj">
+      <Name>gstvideofilter</Name>
+      <Project>{8fe6f590-13c6-4458-8112-648775643ba4}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\sys\libgstdirectsound.vcproj">
+      <Name>gstdirectsound</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92001}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\Build\Plugins\Good\sys\libgstwaveformsink.vcproj">
+      <Name>gstwaveformsink</Name>
+      <Project>{bc97873b-2b88-4b1b-c627-f70df4f92003}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+</Project>

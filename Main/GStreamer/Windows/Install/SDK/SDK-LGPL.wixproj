@@ -1,0 +1,210 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>3.5</ProductVersion>
+    <ProjectGuid>{deffa04b-9b87-4093-45e0-c28fadede1c0}</ProjectGuid>
+    <SchemaVersion>2.0</SchemaVersion>
+    <OutputName>GStreamer-WinBuilds-SDK-LGPL-x86</OutputName>
+    <OutputType>Package</OutputType>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
+    <IncludeSearchPaths>
+    </IncludeSearchPaths>
+    <Name>SDK-LGPL</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <OutputPath>..\..\..\..\..\Deployment\GStreamer\Windows\x86\Install\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>Debug;TOP=$(ProjectDir)..\..\..\..\..\;AppRoot=$(ProjectDir)..\..\..\;InstallRoot=$(ProjectDir)..\</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+    <SuppressSpecificWarnings>1101;1102</SuppressSpecificWarnings>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>..\..\..\..\..\Deployment\GStreamer\Windows\x86\Install\</OutputPath>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <DefineConstants>TOP=$(ProjectDir)..\..\..\..\..\;AppRoot=$(ProjectDir)..\..\..\;InstallRoot=$(ProjectDir)..\</DefineConstants>
+    <WixVariables>
+    </WixVariables>
+    <SuppressIces>
+    </SuppressIces>
+    <SuppressSpecificWarnings>1101;1102</SuppressSpecificWarnings>
+    <SuppressPdbOutput>True</SuppressPdbOutput>
+    <CompilerAdditionalOptions>
+    </CompilerAdditionalOptions>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="..\GUIDs.wxi">
+      <Link>Shared\GUIDs.wxi</Link>
+    </Content>
+    <Content Include="..\Properties.wxi">
+      <Link>Shared\Properties.wxi</Link>
+    </Content>
+    <Content Include="..\Registry.wxi">
+      <Link>Shared\Registry.wxi</Link>
+    </Content>
+    <Content Include="..\Versions.wxi">
+      <Link>Shared\Versions.wxi</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Custom\I18N\" />
+    <Folder Include="Custom" />
+    <Folder Include="Custom\UI\" />
+    <Folder Include="Shared" />
+  </ItemGroup>
+  <ItemGroup>
+    <WixExtension Include="OSSBuildExtensions">
+      <HintPath>..\..\..\..\..\Shared\WiX\OSSBuildExtensions.dll</HintPath>
+      <Name>OSSBuildExtensions</Name>
+    </WixExtension>
+    <WixExtension Include="WixUtilExtension">
+      <HintPath>$(WixExtDir)\WixUtilExtension.dll</HintPath>
+      <Name>WixUtilExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixUIExtension">
+      <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
+      <Name>WixUIExtension</Name>
+    </WixExtension>
+    <WixExtension Include="WixNetFxExtension">
+      <HintPath>$(WixExtDir)\WixNetFxExtension.dll</HintPath>
+      <Name>WixNetFxExtension</Name>
+    </WixExtension>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\Custom\UI\SimplifiedUI.wxs">
+      <Link>Custom\UI\SimplifiedUI.wxs</Link>
+    </Compile>
+    <Compile Include="Python.wxs">
+      <Link>Python.wxs</Link>
+    </Compile>
+    <Compile Include="SDK-LGPL.wxs" />
+    <Compile Include="SDK.wxs">
+      <Link>SDK.wxs</Link>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Custom\I18N\en-us.wxl">
+      <Link>en-us.wxl</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Merge Modules\Bindings\DotNet\Bindings-DotNet.wixproj">
+      <Name>Bindings-DotNet</Name>
+      <Project>{0e5fa0bb-99b7-4093-95c8-b28f9dcdeae0}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Bindings-Python-v2.5.wixproj">
+      <Name>Bindings-Python-v2.5</Name>
+      <Project>{0e5fa0bb-99b7-4093-95c8-b28f9dcdeae1}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Bindings-Python-v2.6.wixproj">
+      <Name>Bindings-Python-v2.6</Name>
+      <Project>{0e5fa0bb-99b7-4093-95c8-b24f9fcdeae2}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Bindings-Python-v2.7.wixproj">
+      <Name>Bindings-Python-v2.7</Name>
+      <Project>{1dd5c3d6-1dbe-4d5c-9b4d-af71c0e9c8ab}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Farsight-Python-v2.5.wixproj">
+      <Name>Farsight-Python-v2.5</Name>
+      <Project>{ad2f533e-1f31-4ae6-9c01-76bdfcf55962}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Farsight-Python-v2.6.wixproj">
+      <Name>Farsight-Python-v2.6</Name>
+      <Project>{1e88e7c9-16ea-424f-8ef3-c4e0902f22c6}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Farsight-Python-v2.7.wixproj">
+      <Name>Farsight-Python-v2.7</Name>
+      <Project>{5f6a821a-d9ef-465a-904a-b1ada4d96239}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Plugins-Python-v2.5.wixproj">
+      <Name>Plugins-Python-v2.5</Name>
+      <Project>{1068ad6c-eea4-4cb4-baee-7d6977ee8d93}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Plugins-Python-v2.6.wixproj">
+      <Name>Plugins-Python-v2.6</Name>
+      <Project>{109d5fe2-5553-4ea1-9a12-2e247848d1e2}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Plugins-Python-v2.7.wixproj">
+      <Name>Plugins-Python-v2.7</Name>
+      <Project>{9f9b6b05-c240-4404-a5c6-1bc69ed02e8a}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Share-Python-v2.5.wixproj">
+      <Name>Share-Python-v2.5</Name>
+      <Project>{8b56c8f2-22d0-455f-939b-7d3384544098}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Share-Python-v2.6.wixproj">
+      <Name>Share-Python-v2.6</Name>
+      <Project>{75ef713f-bbcc-4a91-b669-9f0a42d107ca}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Merge Modules\Bindings\Python\Share-Python-v2.7.wixproj">
+      <Name>Share-Python-v2.7</Name>
+      <Project>{54c6cd7a-a7ab-4b45-bce4-b20b7b8b560d}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\Setup\Complete-LGPL.wixproj">
+      <Name>Complete-LGPL</Name>
+      <Project>{0e5fa0bb-99b7-4093-95c8-f28fadede1a0}</Project>
+      <Private>True</Private>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLLOCATION</RefTargetDir>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(WixTargetsPath)" />
+  <!--
+	To modify your build process, add your task inside one of the targets below and uncomment it.
+	Other similar extension points exist, see Wix.targets.
+	<Target Name="BeforeBuild">
+	</Target>
+	<Target Name="AfterBuild">
+	</Target>
+	-->
+  <PropertyGroup>
+    <PostBuildEvent>move /Y "!(TargetPath)" "$(TargetDir)"
+rmdir /S /Q "$(TargetDir)en-us"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

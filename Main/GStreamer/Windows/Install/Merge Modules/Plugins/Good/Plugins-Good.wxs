@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?include $(var.InstallRoot)\Properties.wxi ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:OSSBuild="$(ossbuild.namespaceURI())">
+
+	<Module Id="Dependencies" Language="$(var.DEFAULT_LANGUAGE)" Version="$(var.OSSBUILD_VERSION)">
+
+		<Package Id="$(var.GUID_X86_MSM_PLUGINS_GOOD_PACKAGE)" Manufacturer="$(var.MANUFACTURER)" InstallerVersion="$(var.MINIMAL_INSTALLER_VERSION)" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="MergeRedirectFolder">
+				<OSSBuild:FillDirectory Directory="$(var.GstPluginDir)">
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstalaw\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstalpha\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstalphacolor\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstapetag\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstaudiofx\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstaudioparsers\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstauparse\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstautodetect\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstavi\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstcairo\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstcutter\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstdebug\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstdeinterlace\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstdirectsound\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gsteffectv\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstequalizer\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstflac\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstflv\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstflxdec\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstgdkpixbuf\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gsticydemux\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstid3demux\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstinterleave\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstimagefreeze\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstisomp4\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstjpeg\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstlevel\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstmatroska\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstmonoscope\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstmulaw\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstmultifile\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstmultipart\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstnavigationtest\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstpng\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstreplaygain\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstrtp\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstrtpmanager\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstrtsp\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstshapewipe\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstsmpte\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstsouphttpsrc\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstspectrum\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstspeex\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstudp\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstvideobox\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstvideocrop\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstvideofilter\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstvideomixer\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstwaveenc\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstwaveformsink\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstwavpack\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gstwavparse\.dll" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gsty4menc\.dll" />
+				</OSSBuild:FillDirectory>
+			</Directory>
+		</Directory>
+
+	</Module>
+
+</Wix>

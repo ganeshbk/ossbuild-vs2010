@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?include $(var.InstallRoot)\Properties.wxi ?>
+
+<?define INSTALLED_PRODUCT_NAME="GStreamer WinBuilds $(var.OSSBUILD_VERSION) (GPL)" ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension" xmlns:OSSBuild="$(ossbuild.namespaceURI())">
+	
+	<Product Version="$(var.OSSBUILD_VERSION)" Name="$(var.INSTALLED_PRODUCT_NAME)" Manufacturer="$(var.MANUFACTURER)" Language="$(var.DEFAULT_LANGUAGE)" Id="$(var.GUID_X86_MSI_COMPLETE_GPL_PACKAGE)" UpgradeCode="$(var.GUID_X86_MSI_COMPLETE_GPL_UPGRADE_CODE)">
+		<Package InstallerVersion="$(var.MINIMAL_INSTALLER_VERSION)" Compressed="yes" />
+		<Media Id="1" Cabinet="product.cab" EmbedCab="yes" CompressionLevel="high" />
+
+		<WixVariable Id="WixUILicenseRtf" Value="$(var.CustomResourceDir)\Licenses\License-GPL.rtf" />
+
+		<Feature 
+			Id="Full"
+			Title="GStreamer"
+			Description="All libraries, plugins, and bindings."
+			Level="1"
+			Display="expand"
+			AllowAdvertise="no" 
+			ConfigurableDirectory="INSTALLDIR"
+		>
+
+			<ComponentGroupRef Id="Gst" />
+			<ComponentGroupRef Id="Gtk" />
+			<ComponentGroupRef Id="Etc" />
+			<ComponentGroupRef Id="AllLicenses" />
+
+			<MergeRef Id="Libraries" />
+			<MergeRef Id="Applications" />
+			<MergeRef Id="Plugins_Base" />
+			<MergeRef Id="Plugins_Good" />
+			<MergeRef Id="Dependencies_GPL" />
+
+			<Feature Id="Plugins" Title="Plugins" Description="FFmpeg, bad, ugly, etc. plugins." Display="expand" Level="1" AllowAdvertise="no">
+				<Feature Id="Plugins_Bad" Title="Bad" Description="Plugins that aren't quite up to par with the standard plugins." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_Bad_GPL" />
+				</Feature>
+
+				<Feature Id="Plugins_Ugly" Title="Ugly" Description="Plugins that are good quality, but might have distribution issues." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_Ugly_GPL" />
+				</Feature>
+
+				<Feature Id="Plugins_FFmpeg" Title="FFmpeg" Description="FFmpeg plugins." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_FFmpeg_GPL" />
+				</Feature>
+
+				<Feature Id="Plugins_GL" Title="OpenGL" Description="OpenGL plugins." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_GL" />
+				</Feature>
+
+				<Feature Id="Plugins_GNonLin" Title="GNonLin" Description="GNonLin (GStreamer Non-Linear) plugins." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_GNonLin" />
+				</Feature>
+
+				<Feature Id="Plugins_Farsight" Title="Farsight"  Description="Farsight plugins." Level="1" AllowAdvertise="no">
+					<MergeRef Id="Plugins_Farsight" />
+					<MergeRef Id="Plugins_Farsight2" />
+					<MergeRef Id="Plugins_Farsight2_Transmitters" />
+				</Feature>
+			</Feature>
+		</Feature>
+
+		<ComponentGroup Id="AllLicenses">
+			<ComponentRef Id="Copying" />
+			<ComponentGroupRef Id="Licenses" />
+		</ComponentGroup>
+
+		<ComponentGroup Id="Gtk">
+			<ComponentGroupRef Id="GtkLib" />
+			<ComponentGroupRef Id="GtkShare" />
+		</ComponentGroup>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\ -->
+		<DirectoryRef Id="GstInstallDir">
+			<Component Id="Copying" Guid="{D1C834B5-C892-4a84-AA8C-BCF3CF221BFA}">
+				<File Source="$(var.CustomResourceDir)\Licenses\COPYING" />
+			</Component>
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\bin\ -->
+		<DirectoryRef Id="GstBinInstallDir">
+			<Merge Id="Libraries" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Libraries.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Applications" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Applications.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+
+			<Merge Id="Dependencies_GPL" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Dependencies-GPL.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\lib\gstreamer-0.10\ -->
+		<DirectoryRef Id="GstLibPluginsInstallDir">
+			<Merge Id="Plugins_GL" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-GL.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_Base" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Base.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_Good" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Good.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_GNonLin" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-GNonLin.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_Farsight" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Farsight.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+
+			<Merge Id="Plugins_Bad_GPL" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Bad-GPL.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_Ugly_GPL" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Ugly-GPL.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+			<Merge Id="Plugins_FFmpeg_GPL" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-FFmpeg-GPL.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+
+			<Merge Id="Plugins_Farsight2" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Farsight2.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\lib\farsight2-0.0\ -->
+		<DirectoryRef Id="GstLibFarsightInstallDir">
+			<Merge Id="Plugins_Farsight2_Transmitters" SourceFile="$(var.MergeModuleDir)\$(var.x86_MergeModulePrefix)-Plugins-Farsight2-Transmitters.msm" Language="$(var.DEFAULT_LANGUAGE)" DiskId="1" />
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\lib\gtk-2.0\ -->
+		<DirectoryRef Id="GstLibGTKInstallDir">
+			<OSSBuild:FillDirectory ComponentGroup="GtkLib" Directory="$(var.SharedLibDir)\gtk-$(var.GTK_VERSION)">
+				<OSSBuild:Filter Include=".*\.dll" />
+			</OSSBuild:FillDirectory>
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\etc\ -->
+		<DirectoryRef Id="GstEtcInstallDir">
+			<OSSBuild:FillDirectory ComponentGroup="Etc" Directory="$(var.SharedEtcDir)">
+				<OSSBuild:Filter Include=".*" />
+			</OSSBuild:FillDirectory>
+		</DirectoryRef>
+
+		<!-- C:\Program Files\OSSBuild\v<Version>\share\ -->
+		<DirectoryRef Id="GstShareInstallDir">
+			<OSSBuild:FillDirectory ComponentGroup="GtkShare" Directory="$(var.SharedShareDir)">
+				<OSSBuild:Filter Include=".*\\locale\\.*" />
+				<OSSBuild:Filter Include=".*\\themes\\.*" />
+			</OSSBuild:FillDirectory>
+
+			<Directory Id="license" Name="licenses">
+				<OSSBuild:FillDirectory ComponentGroup="Licenses" Directory="$(var.LicenseDir)">
+					<OSSBuild:Filter Include=".*" />
+				</OSSBuild:FillDirectory>
+			</Directory>
+		</DirectoryRef>
+
+		<!--
+		<Directory Id="Lib" Name="lib">
+			<Directory Id="SitePackages" Name="site-packages">
+
+				<Directory Id="GstVersion" Name="gst-$(var.GST_VERSION)">
+					<Directory Id="Gst" Name="gst">
+						<Directory Id="Extend" Name="extend">
+							
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<Directory Id="Share" Name="share">
+			<Directory Id="GstPython" Name="gst-python">
+				<Directory Id="GstVersion" Name="$(var.GST_VERSION)">
+					<Directory Id="Examples" Name="examples">
+						
+					</Directory>
+					<Directory Id="Defs" Name="defs">
+						
+					</Directory>
+				</Directory>
+			</Directory>
+		</Directory>
+		-->
+
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLDIR" />
+		<UIRef Id="WixUI_FeatureTree"/>
+
+		<CustomAction Id="NewerVersion" Error="!(loc.NewerVersionFound)" />
+		<Property Id="OLDER_VERSION_BEING_UPGRADED" Secure="yes" />
+		<Upgrade Id="$(var.GUID_X86_MSI_COMPLETE_GPL_UPGRADE)">
+			<UpgradeVersion Minimum="$(var.OSSBUILD_VERSION)" OnlyDetect="yes" Property="NEWER_VERSION_DETECTED" />
+			<UpgradeVersion Minimum="0.0.0" Maximum="$(var.OSSBUILD_VERSION)" IncludeMinimum="yes" IncludeMaximum="no" Property="OLDER_VERSION_BEING_UPGRADED" />
+		</Upgrade>
+
+		<InstallExecuteSequence>
+			<Custom Action="NewerVersion" After="FindRelatedProducts">NEWER_VERSION_DETECTED</Custom>
+			<RemoveExistingProducts After="InstallInitialize" />
+		</InstallExecuteSequence>
+	
+	</Product>
+	
+</Wix>

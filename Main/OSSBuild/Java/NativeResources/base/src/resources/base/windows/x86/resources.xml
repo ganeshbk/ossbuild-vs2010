@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="base">
+
+	<References />
+	
+	<Extract package="resources.base.windows.x86" directory="${nativeResDir}/">
+		<Echo key="res.base.init" msg="Initializing base..." />
+
+		<!-- Set variables to hold the platform's base package name and the base directory -->
+		<Var name="pkgPlatform" value="${pkg}" />
+		<Var name="dirPlatform" value="${dir}" />
+
+		<Echo key="res.base.env" msg="Initializing base environment..." />
+
+		<!-- Ensure this directory exists -->
+		<MakeDirectory path="${dirPlatform}/bin/" />
+
+		<!-- Change the working directory while we load native libraries -->
+		<!--
+		<WorkingDirectory path="${dirPlatform}/bin/" />
+		-->
+
+		<!-- Change path so that our native libraries are found first -->
+		<EnvVar name="PATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+
+		<Echo key="res.base.complete" msg="Base environment initialization complete" />
+	</Extract>
+	
+	<Extract package="${pkgPlatform}.bin" directory="${dirPlatform}/bin/">
+		<Echo key="res.base.initlibs" msg="Initializing base libraries..." />
+
+		<!-- Libraries -->
+
+		<Library resource="z.dll" />
+		<Library resource="libbz2.dll" />
+		<Library resource="libiconv-2.dll" />
+		<Library resource="libcharset-1.dll" />
+		<Library resource="libfribidi-0.dll" />
+		<Library resource="pthreadGC2.dll" />
+		<Library resource="liboil-0.3-0.dll" />
+		<Library resource="liborc-0.4-0.dll" />
+		<Library resource="liborc-test-0.4-0.dll" />
+		<Library resource="liborc-float-0.4-0.dll" />
+
+		<Library resource="libgcc_s_sjlj-1.dll" />
+		<Library resource="libstdc++-6.dll" />
+	</Extract>
+
+</Resources>

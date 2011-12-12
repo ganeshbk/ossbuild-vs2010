@@ -1,0 +1,78 @@
+Index: gst-ffmpeg/ext/ffmpeg/gstffmpegdec.c
+===================================================================
+--- gst-ffmpeg/ext/ffmpeg/gstffmpegdec.c	(revision 550)
++++ gst-ffmpeg/ext/ffmpeg/gstffmpegdec.c	(working copy)
+@@ -2911,7 +2911,8 @@
+         rank = GST_RANK_NONE;
+         break;
+       default:
+-        rank = GST_RANK_MARGINAL;
++	    /* We still want these plugins choosen first on Windows */
++        rank = GST_RANK_MARGINAL + 1;
+         break;
+     }
+     if (!gst_element_register (plugin, type_name, rank, type)) {
+Index: gst-plugins-bad/sys/dshowdecwrapper/gstdshowaudiodec.cpp
+===================================================================
+--- gst-plugins-bad/sys/dshowdecwrapper/gstdshowaudiodec.cpp	(revision 550)
++++ gst-plugins-bad/sys/dshowdecwrapper/gstdshowaudiodec.cpp	(working copy)
+@@ -1111,7 +1111,7 @@
+       type = g_type_register_static (GST_TYPE_ELEMENT,
+           audio_dec_codecs[i].element_name, &info, (GTypeFlags)0);
+       if (!gst_element_register (plugin, audio_dec_codecs[i].element_name,
+-              GST_RANK_SECONDARY, type)) {
++              GST_RANK_MARGINAL, type)) {
+         return FALSE;
+       }
+       GST_CAT_DEBUG (dshowaudiodec_debug, "Registered %s",
+Index: gst-plugins-bad/sys/dshowdecwrapper/gstdshowvideodec.cpp
+===================================================================
+--- gst-plugins-bad/sys/dshowdecwrapper/gstdshowvideodec.cpp	(revision 550)
++++ gst-plugins-bad/sys/dshowdecwrapper/gstdshowvideodec.cpp	(working copy)
+@@ -1199,7 +1199,7 @@
+           g_type_register_static (GST_TYPE_ELEMENT,
+           video_dec_codecs[i].element_name, &info, (GTypeFlags)0);
+       if (!gst_element_register (plugin, video_dec_codecs[i].element_name,
+-              GST_RANK_PRIMARY, type)) {
++              GST_RANK_MARGINAL, type)) {
+         return FALSE;
+       }
+       GST_DEBUG ("Registered %s", video_dec_codecs[i].element_name);
+Index: gst-plugins-bad/sys/dshowsrcwrapper/gstdshowsrcwrapper.cpp
+===================================================================
+--- gst-plugins-bad/sys/dshowsrcwrapper/gstdshowsrcwrapper.cpp	(revision 550)
++++ gst-plugins-bad/sys/dshowsrcwrapper/gstdshowsrcwrapper.cpp	(working copy)
+@@ -32,7 +32,7 @@
+   if (!gst_element_register (plugin, "dshowaudiosrc",
+           GST_RANK_NONE, GST_TYPE_DSHOWAUDIOSRC) ||
+       !gst_element_register (plugin, "dshowvideosrc",
+-          GST_RANK_NONE, GST_TYPE_DSHOWVIDEOSRC))
++          GST_RANK_PRIMARY, GST_TYPE_DSHOWVIDEOSRC))
+     return FALSE;
+ 
+   return TRUE;
+Index: gst-plugins-good/sys/waveform/gstwaveformplugin.c
+===================================================================
+--- gst-plugins-good/sys/waveform/gstwaveformplugin.c	(revision 550)
++++ gst-plugins-good/sys/waveform/gstwaveformplugin.c	(working copy)
+@@ -28,7 +28,7 @@
+ static gboolean
+ plugin_init (GstPlugin * plugin)
+ {
+-  if (!gst_element_register (plugin, "waveformsink", GST_RANK_PRIMARY,
++  if (!gst_element_register (plugin, "waveformsink", GST_RANK_MARGINAL,
+           GST_TYPE_WAVEFORM_SINK))
+     return FALSE;
+Index: ext/ffmpeg/gstffmpegdemux.c
+===================================================================
+--- ext/ffmpeg/gstffmpegdemux.c	(revision 683)
++++ ext/ffmpeg/gstffmpegdemux.c	(working copy)
+@@ -1960,6 +1960,7 @@
+         !strcmp (in_plugin->name, "aiff") ||
+         !strcmp (in_plugin->name, "4xm") ||
+         !strcmp (in_plugin->name, "yuv4mpegpipe") ||
++		!strcmp (in_plugin->name, "dv") ||
+         !strcmp (in_plugin->name, "mpc") || !strcmp (in_plugin->name, "gif"))
+       rank = GST_RANK_MARGINAL;
+     else
+

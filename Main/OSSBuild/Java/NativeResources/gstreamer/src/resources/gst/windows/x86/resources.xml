@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="gstreamer">
+
+	<!--
+		We take advantage of the fact that non-existent references are
+		silently ignored and use this package to reference any other
+		GStreamer plugin resource packages it happens to find in the
+		classpath.
+	-->
+	<References>
+		<Add name="gst-core" />
+		<Add name="gst-plugins-base" />
+		<Add name="gst-plugins-good" />
+		<Add name="gst-plugins-bad" />
+		<Add name="gst-plugins-ugly" />
+		<Add name="gst-plugins-gl" />
+		<Add name="gst-plugins-farsight" />
+		<Add name="gst-ffmpeg" />
+		<Add name="gnonlin" />
+	</References>
+
+</Resources>

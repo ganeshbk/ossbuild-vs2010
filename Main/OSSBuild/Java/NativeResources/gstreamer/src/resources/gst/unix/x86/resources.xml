@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="gstreamer">
+
+	<References>
+		<Add name="gst-core" />
+		<Add name="gst-plugins-base" />
+		<Add name="gst-plugins-good" />
+		<Add name="gst-plugins-bad" />
+		<Add name="gst-plugins-ugly" />
+		<Add name="gst-plugins-gl" />
+		<Add name="gst-plugins-farsight" />
+		<Add name="gst-ffmpeg" />
+		<Add name="gnonlin" />
+	</References>
+
+</Resources>

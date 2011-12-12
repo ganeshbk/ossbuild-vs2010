@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?include $(var.InstallRoot)\Properties.wxi ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:OSSBuild="$(ossbuild.namespaceURI())">
+
+	<Module Id="Dependencies" Language="$(var.DEFAULT_LANGUAGE)" Version="$(var.OSSBUILD_VERSION)">
+
+		<Package Id="$(var.GUID_X86_MSM_BINDINGS_DOTNET_PACKAGE)" Manufacturer="$(var.MANUFACTURER)" InstallerVersion="$(var.MINIMAL_INSTALLER_VERSION)" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="MergeRedirectFolder">
+				
+				<Component Id="DotNetGlue" Guid="{454F3BAA-F7D1-4F6C-8A2A-FE9F22F73563}">
+					<File Id="UnmanagedGlue" Name="gstreamersharpglue-$(var.GST_VERSION).dll" Source="$(var.GstBinDir)\gstreamersharpglue-$(var.GST_VERSION).dll" />
+				</Component>
+				
+				<Component Id="DotNet" Guid="$(var.GUID_X86_MSM_BINDINGS_DOTNET_ASSEMBLY_COMPONENT)">
+					<File Id="ManagedAssembly" Name="gstreamer-sharp.dll" Source="$(var.GstBinDir)\gstreamer-sharp.dll" KeyPath="yes" Checksum="yes" Assembly=".net" ProcessorArchitecture="$(var.Platform)" />
+				</Component>
+				
+			</Directory>
+		</Directory>
+
+	</Module>
+
+</Wix>

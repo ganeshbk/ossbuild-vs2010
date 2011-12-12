@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Include xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	
+	<?define OSSBUILD_VERSION="0.10.7" ?>
+	
+	<?define GST_VERSION="0.10" ?>
+
+	<?define GTK_VERSION="2.0" ?>
+	
+	<?define FARSIGHT2_VERSION="0.0" ?>
+	
+</Include>

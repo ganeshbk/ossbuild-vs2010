@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="gst-core">
+
+	<!--
+		We play a bit of magic here by using <File /> instead of <Library />
+		tags in all GStreamer resource packages. This allows us to extract
+		all plugins + associated libraries before they're used and also
+		allows us to use Sys.loadNativeResources() with just one call. It
+		also means we can mix and match plugin jars if they are or aren't
+		on the classpath.
+	-->
+	<References>
+		<Add name="base" />
+		<Add name="xml" />
+		<Add name="glib" />
+	</References>
+	
+	<Extract package="resources.gstcore.windows.x86" directory="${nativeResDir}/">
+		<Echo key="res.gstcore.init" msg="Initializing GStreamer core libraries..." />
+		
+		<!-- Set variables to hold the platform's base package name and the base directory -->
+		<Var name="pkgPlatform" value="${pkg}" />
+		<Var name="dirPlatform" value="${dir}" />
+
+		<Var name="GstApiVersion" value="0.10" />
+
+		<Var name="dirGstApiVersion" value="0.10" />
+		<Var name="pkgGstApiVersion" value="0_10" />
+	</Extract>
+
+	<Extract package="${pkgPlatform}.bin" directory="${dirPlatform}/bin/">
+		<!-- Executables -->
+		<File resource="gst-player.exe" executable="true" />
+		<File resource="gst-launch.exe" executable="true" />
+		<File resource="gst-inspect.exe" executable="true" />
+		<File resource="gst-typefind.exe" executable="true" />
+
+		<!-- Libraries -->
+		<Library resource="libgstreamer-${GstApiVersion}.dll" />
+		<Library resource="libgstcontroller-${GstApiVersion}.dll" />
+		<Library resource="libgstdataprotocol-${GstApiVersion}.dll" />
+		<Library resource="libgstnet-${GstApiVersion}.dll" />
+		<Library resource="libgstbase-${GstApiVersion}.dll" />
+
+		<AddJNASearchPath libraryName="gstreamer-${GstApiVersion}"       path="${dir}" />
+		<AddJNASearchPath libraryName="gstcontroller-${GstApiVersion}"   path="${dir}" />
+		<AddJNASearchPath libraryName="gstdataprotocol-${GstApiVersion}" path="${dir}" />
+		<AddJNASearchPath libraryName="gstnet-${GstApiVersion}"          path="${dir}" />
+		<AddJNASearchPath libraryName="gstbase-${GstApiVersion}"         path="${dir}" />
+		
+		<!--
+		<File resource="libgstgl-${GstApiVersion}.dll" />
+		<File resource="libgstfarsight-${GstApiVersion}.dll" />
+		-->
+	</Extract>
+
+	<Extract package="${pkgPlatform}.lib.gstreamer_${pkgGstApiVersion}" directory="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/">
+		<!-- Environment Variables -->
+		<EnvVar name="GST_REGISTRY" value="${dirPlatform}/gst-registry.bin" asFile="true" />
+		<EnvVar name="GST_PLUGIN_PATH" value="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/" asFile="true" />
+	</Extract>
+
+</Resources>

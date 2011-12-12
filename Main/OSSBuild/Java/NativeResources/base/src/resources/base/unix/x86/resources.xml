@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="base">
+
+	<References />
+	
+	<Extract package="resources.base.unix.x86" directory="${nativeResDir}/">
+		<Echo key="res.base.init" msg="Initializing base..." />
+
+		<!-- Set variables to hold the platform's base package name and the base directory -->
+		<Var name="pkgPlatform" value="${pkg}" />
+		<Var name="dirPlatform" value="${dir}" />
+
+		<Echo key="res.base.env" msg="Initializing base environment..." />
+
+		<!-- Ensure this directory exists -->
+		<MakeDirectory path="${dirPlatform}/bin/" />
+
+		<!-- Change the working directory while we load native libraries -->
+		<!--
+		<WorkingDirectory path="${dirPlatform}/bin/" />
+		-->
+
+		<!-- Change path so that our native libraries are found first -->
+		<EnvVar name="PATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+		<EnvVar name="LIBPATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+		<EnvVar name="SHLIB_PATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+		<EnvVar name="LD_LIBRARY_PATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+		<EnvVar name="DYLD_LIBRARY_PATH" prepend="true" value="${dirPlatform}/bin/" asFile="true" />
+
+		<Echo key="res.base.complete" msg="Base environment initialization complete" />
+	</Extract>
+
+	<Extract package="${pkgPlatform}.bin" directory="${dirPlatform}/bin/">
+		<Echo key="res.base.initlibs" msg="Initializing base libraries..." />
+
+		<!-- Libraries -->
+
+		<Library resource="libz.so.1"       executable="true">
+			<SystemAttempt>z</SystemAttempt>
+		</Library>
+		<Library resource="libbz2.so.1.0"   executable="true">
+			<SystemAttempt>bz2</SystemAttempt>
+		</Library>
+		<Library resource="liboil-0.3.so.0" executable="true" />
+		<Library resource="liborc-0.4.so.0" executable="true" />
+		<Library resource="liborc-test-0.4.so.0" executable="true" />
+		<Library resource="liborc-float-0.4.so.0" executable="true" />
+
+		<!--
+			TODO: Add libiconv and libcharset
+		-->
+	</Extract>
+</Resources>

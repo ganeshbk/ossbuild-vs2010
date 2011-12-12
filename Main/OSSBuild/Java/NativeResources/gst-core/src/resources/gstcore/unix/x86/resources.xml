@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Resources name="gst-core">
+
+	<References>
+		<Add name="base" />
+		<Add name="glib" />
+		<Add name="xml" />
+	</References>
+	
+	<Extract package="resources.gstcore.unix.x86" directory="${nativeResDir}/">
+		<Echo key="res.gstcore.init" msg="Initializing GStreamer core libraries..." />
+
+		<!-- Set variables to hold the platform's base package name and the base directory -->
+		<Var name="pkgPlatform" value="${pkg}" />
+		<Var name="dirPlatform" value="${dir}" />
+
+		<Var name="GstApiVersion" value="0.10" />
+
+		<Var name="dirGstApiVersion" value="0.10" />
+		<Var name="pkgGstApiVersion" value="0_10" />
+	</Extract>
+
+	<Extract package="${pkgPlatform}.bin" directory="${dirPlatform}/bin/">
+		<!-- Executables -->
+		<File resource="gst-player" executable="true" />
+		<File resource="gst-launch" executable="true" />
+		<File resource="gst-inspect" executable="true" />
+		<File resource="gst-typefind" executable="true" />
+
+		<!-- Libraries -->
+		<Library resource="libgstreamer-${GstApiVersion}.so.0"           executable="true" />
+		<Library resource="libgstcontroller-${GstApiVersion}.so.0"       executable="true" />
+		<Library resource="libgstdataprotocol-${GstApiVersion}.so.0"     executable="true" />
+		<Library resource="libgstnet-${GstApiVersion}.so.0"              executable="true" />
+		<Library resource="libgstbase-${GstApiVersion}.so.0"             executable="true" />
+
+		<SymLink from="${dir}/libgstreamer-${GstApiVersion}.so"          to="${dir}/libgstreamer-${GstApiVersion}.so.0" />
+		<SymLink from="${dir}/libgstcontroller-${GstApiVersion}.so"      to="${dir}/libgstcontroller-${GstApiVersion}.so.0" />
+		<SymLink from="${dir}/libgstdataprotocol-${GstApiVersion}.so"    to="${dir}/libgstdataprotocol-${GstApiVersion}.so.0" />
+		<SymLink from="${dir}/libgstnet-${GstApiVersion}.so"             to="${dir}/libgstnet-${GstApiVersion}.so.0" />
+		<SymLink from="${dir}/libgstbase-${GstApiVersion}.so"            to="${dir}/libgstbase-${GstApiVersion}.so.0" />
+
+		<AddJNASearchPath libraryName="gstreamer-${GstApiVersion}"       path="${dir}" />
+		<AddJNASearchPath libraryName="gstcontroller-${GstApiVersion}"   path="${dir}" />
+		<AddJNASearchPath libraryName="gstdataprotocol-${GstApiVersion}" path="${dir}" />
+		<AddJNASearchPath libraryName="gstnet-${GstApiVersion}"          path="${dir}" />
+		<AddJNASearchPath libraryName="gstbase-${GstApiVersion}"         path="${dir}" />
+
+		<!--
+		<File resource="libgstgl-${GstApiVersion}.so.0"              executable="true" />
+		<File resource="libgstfarsight-${GstApiVersion}.so.0"        executable="true" />
+		-->
+	</Extract>
+
+	<Extract package="${pkgPlatform}.lib.gstreamer_${pkgGstApiVersion}" directory="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/">
+		<!-- Environment Variables -->
+		<EnvVar name="PATH" prepend="true" value="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/" asFile="true" />
+		<EnvVar name="GST_PLUGIN_PATH" value="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/" asFile="true" prepend="false" append="false" />
+		<EnvVar name="GST_PLUGIN_SYSTEM_PATH" value="" prepend="false" append="false" />
+
+		<EnvVar name="GST_REGISTRY" value="${dirPlatform}/gst-registry.bin" asFile="true" prepend="false" append="false" />
+		<EnvVar name="GST_PLUGIN_SCANNER" value="${dirPlatform}/lib/gstreamer-${dirGstApiVersion}/gst-plugin-scanner" asFile="true" prepend="false" append="false" />
+
+		<EnvVar name="GST_REGISTRY_FORK" value="yes" />
+		<EnvVar name="GST_REGISTRY_UPDATE" value="yes" />
+
+		<File resource="gst-plugin-scanner"                              executable="true" />
+	</Extract>
+
+</Resources>

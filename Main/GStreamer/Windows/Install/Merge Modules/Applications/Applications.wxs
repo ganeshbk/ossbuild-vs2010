@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?include $(var.InstallRoot)\Properties.wxi ?>
+
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:OSSBuild="$(ossbuild.namespaceURI())">
+
+	<Module Id="Dependencies" Language="$(var.DEFAULT_LANGUAGE)" Version="$(var.OSSBUILD_VERSION)">
+
+		<Package Id="$(var.GUID_X86_MSM_APPLICATIONS_PACKAGE)" Manufacturer="$(var.MANUFACTURER)" InstallerVersion="$(var.MINIMAL_INSTALLER_VERSION)" />
+
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="MergeRedirectFolder">
+				<OSSBuild:FillDirectory Directory="$(var.GstBinDir)">
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gst-launch.*\.exe" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gst-inspect.*\.exe" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gst-xmlinspect.*\.exe" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gst-typefind.*\.exe" />
+					<OSSBuild:Filter Include=".*\\[^\\]*.*gst-player.*\.exe" />
+				</OSSBuild:FillDirectory>
+			</Directory>
+		</Directory>
+
+	</Module>
+
+</Wix>

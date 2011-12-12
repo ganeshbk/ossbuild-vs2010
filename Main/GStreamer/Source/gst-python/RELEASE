@@ -1,0 +1,77 @@
+
+Release notes for GStreamer Python bindings 0.10.20 "What Abitbol said before dying"
+        
+
+
+The GStreamer team is proud to announce a new release
+in the 0.10.x stable series of the
+GStreamer Python Bindings.
+
+
+The 0.10.x series is a stable series targeted at end users.
+It is not API or ABI compatible with the stable 0.8.x series.
+It is, however, parallel installable with the 0.8.x series.
+
+
+  
+
+Features of this release
+    
+      * Parallel installability with 0.8.x series
+      * libpython loading fixes
+      * MacOSX standard python support
+      * Threadsafe design and API
+
+Bugs fixed in this release
+     
+      * 339772 : Python example showing segment seeking and looping
+      * 402044 : Doesn't compile with some features disabled in core
+      * 590348 : [audio (and other modules)] can't use pygstminiobject !
+      * 620067 : Add bindings gst.util_uint64_scale_ceil and friends
+      * 623105 : gstpythonplugin.c does not import user's gobject module
+      * 624592 : gst-python: plugin: attempt to load plugin " python " fails with KeyError
+      * 624882 : Add support for gst.Fraction property getters
+      * 625660 : gstpythonplugin: fails to refresh plugin registry when installed Python plugins change
+      * 633033 : filesrc.py example segfaults
+      * 633141 : MSVC cannot compile gstpythonplugin.c
+      * 633555 : discoverer: use specific types in getters, rename some boolean getters
+      * 634365 : gst.pbutils.get_codec_description segfaults
+
+Download
+
+You can find source releases of gst-python in the download directory:
+http://gstreamer.freedesktop.org/src/gst-python/
+
+GStreamer Homepage
+
+More details can be found on the project's website:
+http://gstreamer.freedesktop.org/
+
+Support and Bugs
+
+We use GNOME's bugzilla for bug reports and feature requests:
+http://bugzilla.gnome.org/enter_bug.cgi?product=GStreamer
+
+Developers
+
+GStreamer is stored in Git, hosted at git.freedesktop.org, and can be cloned from there.
+Interested developers of the core library, plug-ins, and applications should
+subscribe to the gstreamer-devel list. If there is sufficient interest we
+will create more lists as necessary.
+
+        
+Applications
+  
+Contributors to this release
+    
+      * Alessandro Decina
+      * David Hoyt
+      * David Schleef
+      * Edward Hervey
+      * Jan Schmidt
+      * Leo Singer
+      * Sebastian Dröge
+      * Stefan Kost
+      * Thiago Santos
+      * Tim-Philipp Müller
+ 
