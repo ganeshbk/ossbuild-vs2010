@@ -93,6 +93,7 @@
       <DataExecutionPrevention>
       </DataExecutionPrevention>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>gstreamer-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
       <Command>
@@ -105,6 +106,15 @@
       <Private>false</Private>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstrtp.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f10}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstrtsp.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f11}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstsdp.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f12}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
