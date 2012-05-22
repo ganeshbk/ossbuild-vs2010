@@ -11,11 +11,9 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Header_Installer_Tool>
-      <ModuleName>.</ModuleName>
-      <CommandLineTemplate>if not exist $(OutDir)include\%(ModuleName)\NUL mkdir "$(OutDir)include\%(ModuleName)"
-copy /B /Y [AdditionalOptions] "%(FullPath)" "$(OutDir)include\%(ModuleName)"</CommandLineTemplate>
-      <Outputs>$(OutDir)include\%(ModuleName)\%(Filename)%(Extension)</Outputs>
-      <ExecutionDescription>Installing %(Filename)%(Extension) to $(OutDir)include\%(ModuleName)</ExecutionDescription>
+      <CommandLineTemplate>if not exist $(OutDir)include\[ModuleName]\NUL mkdir "$(OutDir)include\[ModuleName]"
+copy /B /Y [AdditionalOptions] "%(FullPath)" "$(OutDir)include\[ModuleName]"</CommandLineTemplate>
+      <Outputs>$(OutDir)include\%(Header_Installer_Tool.ModuleName)\%(Filename)%(Extension)</Outputs>
     </Header_Installer_Tool>
   </ItemDefinitionGroup>
   <PropertyGroup

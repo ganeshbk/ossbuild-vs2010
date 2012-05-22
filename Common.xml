@@ -41,7 +41,8 @@
       Name="ModuleName"
       HelpContext="0"
       DisplayName="Directory prefix with module"
-      Description="Module name, meaning that headerfiles get installed to $(OutDir)\include\[ModuleName]\. Leave blank to install in the toplevel include directory ($(OutDir)\include\)." />
+      Description="Module name, meaning that headerfiles get installed to $(OutDir)\include\[ModuleName]\. Leave blank to install in the toplevel include directory ($(OutDir)\include\)."
+	  Switch="[value]"/>
     <StringProperty
       Name="CommandLineTemplate"
       DisplayName="Command Line"

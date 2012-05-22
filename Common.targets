@@ -217,7 +217,7 @@
     </ItemGroup>
     <Message
       Importance="High"
-      Text="%(Header_Installer_Tool.ExecutionDescription)" />
+      Text="Installing %(Filename)%(Extension) to $(OutDir)include\%(Header_Installer_Tool.ModuleName)" />
     <WriteLinesToFile
       Condition="'@(Header_Installer_Tool_tlog)' != '' and '%(Header_Installer_Tool_tlog.ExcludedFromBuild)' != 'true'"
       File="$(IntDir)$(ProjectName).write.1.tlog"
@@ -227,7 +227,11 @@
       CommandLineTemplate="%(Header_Installer_Tool.CommandLineTemplate)"
       ModuleName="%(Header_Installer_Tool.ModuleName)"
       AdditionalOptions="%(Header_Installer_Tool.AdditionalOptions)"
-      Inputs="%(Header_Installer_Tool.Identity)" />
+      Inputs="%(Header_Installer_Tool.Identity)"
+	  StandardOutputImportance="High"
+      StandardErrorImportance="High"
+	  EchoOff="true"
+	  />
   </Target>
   <PropertyGroup>
     <ComputeLinkInputsTargets>
