@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{8022073f-dd9b-4974-969f-d4b55644ebbe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-base\gst\volume\gstvolumeorc.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-base\gst\volume\gstvolume.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-base\gst\volume\gstvolumeorc.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-base\gst\volume\gstvolume.h" />
+  </ItemGroup>
+</Project>

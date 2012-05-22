@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{835e7ede-a32d-4e08-9fd0-74a21893ea4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{975d4ad4-863c-4584-9888-43902dc2e5d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public\Generated">
+      <UniqueIdentifier>{ece9058c-9ccb-4c59-85b9-6eaab59e406f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{06a2927c-8fea-4992-9219-13b94a697b58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated">
+      <UniqueIdentifier>{46d5ab61-b7e1-41b0-b260-e8f356e1b6ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{9cc16882-9b79-4c83-a2cd-74b7c4f40570}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\colorbalance.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\colorbalancechannel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixeroptions.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixertrack.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\navigation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\propertyprobe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\streamvolume.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tuner.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tunerchannel.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tunernorm.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\videoorientation.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\xoverlay.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\gst-plugins-base\gst-libs\gst\interfaces\interfaces-enumtypes.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\gst-plugins-base\gst-libs\gst\interfaces\interfaces-marshal.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-base\win32\common\libgstinterfaces.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\colorbalance.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\colorbalancechannel.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixer.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixeroptions.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\mixertrack.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\navigation.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\propertyprobe.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\streamvolume.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tuner.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tunerchannel.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\tunernorm.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\videoorientation.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\interfaces\xoverlay.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\Generated\gst-plugins-base\gst-libs\gst\interfaces\interfaces-enumtypes.h">
+      <Filter>Header Files\Public\Generated</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

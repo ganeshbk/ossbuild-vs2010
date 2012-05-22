@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{e5866eea-ea62-44cd-9c8a-b2c3364c3b48}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-bad\gst\camerabin\gstcamerabin-marshal.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabingeneral.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinimage.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinpreview.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinvideo.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstcamerabin-enum.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstcamerabin.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstcamerabincolorbalance.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstinputselector.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-bad\gst\camerabin\gstcamerabin-marshal.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabingeneral.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinimage.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinpreview.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\camerabinvideo.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstcamerabin.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstcamerabincolorbalance.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\camerabin\gstinputselector.h" />
+  </ItemGroup>
+</Project>

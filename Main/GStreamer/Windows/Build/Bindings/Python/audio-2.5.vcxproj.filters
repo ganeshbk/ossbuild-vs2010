@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{cefd54e1-ee09-4af0-8f18-14da1874c451}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{53ca873f-d450-44f7-aec2-fcd3bca01492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files\Generated">
+      <UniqueIdentifier>{48d974cc-4428-47c0-8c66-5229ed52065c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\common.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\audiomodule.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\gst-argtypes.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Generated\gst-python\audio.c">
+      <Filter>Sources Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

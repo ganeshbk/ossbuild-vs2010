@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <LibGsfApiVersionString>1</LibGsfApiVersionString>
+    <LibGsfLibVersionString>$(LibGsfApiVersionString)</LibGsfLibVersionString>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(OutDir)include\libgsf-$(LibGsfApiVersionString);$(SolutionDir)Shared\Build\Windows\$(Platform)\include\libgsf-$(LibGsfApiVersionString);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gsf-$(LibGsfLibVersionString).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LibGsfApiVersionString">
+      <Value>$(LibGsfApiVersionString)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibGsfLibVersionString">
+      <Value>$(LibGsfLibVersionString)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{56417653-1acc-4205-8fd4-338e3a3eba81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{b5683d62-af9d-4d35-b0f7-a003631339a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public\Generated">
+      <UniqueIdentifier>{4f813363-e01c-4a61-ad88-913a259e6b51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{274306e1-2fb7-4f6f-ae46-02efc961d8a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated">
+      <UniqueIdentifier>{e87c224d-9977-4780-b70c-b45be5a0fc3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{33839897-a1d9-4912-a2a0-502e6ca716c9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\convertframe.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\gstvideofilter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\gstvideosink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\video.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\gst-plugins-base\gst-libs\gst\video\video-enumtypes.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-base\win32\common\libgstvideo.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\gstvideofilter.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\gstvideosink.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\video\video.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\Generated\gst-plugins-base\gst-libs\gst\video\video-enumtypes.h">
+      <Filter>Header Files\Public\Generated</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

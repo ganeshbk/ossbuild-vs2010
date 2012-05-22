@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <PThreadsMajorVersion>2</PThreadsMajorVersion>
+    <PThreadsMinorVersion>8</PThreadsMinorVersion>
+    <PThreadsMicroVersion>0</PThreadsMicroVersion>
+    <PThreadsVersionNumber>020800</PThreadsVersionNumber>
+    <PThreadsVersionString>$(PThreadsMajorVersion).$(PThreadsMinorVersion).$(PThreadsMicroVersion)</PThreadsVersionString>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>pthreadGC2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="PThreadsMajorVersion">
+      <Value>$(PThreadsMajorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PThreadsMinorVersion">
+      <Value>$(PThreadsMinorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PThreadsMicroVersion">
+      <Value>$(PThreadsMicroVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PThreadsVersionNumber">
+      <Value>$(PThreadsVersionNumber)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PThreadsVersionString">
+      <Value>$(PThreadsVersionString)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

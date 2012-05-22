@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{2c71f371-36c6-4104-8504-a823cb3b284e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{70ec3e10-cfd2-4246-ba79-4788a1800114}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-agent.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-stream-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-agent.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-stream-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\nice\fs-nice-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9b40c607-43cb-4fc7-acf7-6ef16b978be1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{38581695-60c8-44e5-85d5-8e21ee3c151c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6a7b09c7-8d8e-4417-8788-6eade86b16fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{87303f0b-1cb2-4516-8be4-b62f7e73cc10}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\cdda\gstcddabasesrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-base\win32\common\libgstcdda.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\cdda\gstcddabasesrc.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

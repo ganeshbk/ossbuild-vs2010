@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{fbdc9d36-5aad-43fb-97fe-58e905bfe2df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated">
+      <UniqueIdentifier>{9eede1b6-6361-49ec-a930-a3c61e0c34a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{bc39b04f-d2d8-48bd-bfa1-26e6cf8edb94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{1c767522-45c8-4664-be35-84e62b1e6e9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Generated">
+      <UniqueIdentifier>{cd5aa8fc-2669-4b6e-a6b9-724cd1b2569f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{4a6e3c4d-3f87-45b7-812f-353be4dd0f63}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-base-conference.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-candidate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-codec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-conference-iface.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-element-added-notifier.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-interfaces.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-participant.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-plugin.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-session.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-stream-transmitter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-stream.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-transmitter.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\farsight2\gst-libs\farsight\fs-enumtypes.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\farsight2\gst-libs\farsight\fs-marshal.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Generated\farsight2\gst-libs\farsight\fs-marshal.h">
+      <Filter>Header Files\Generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libgstfarsight.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-base-conference.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-candidate.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-codec.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-conference-iface.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-element-added-notifier.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-interfaces.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-participant.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-plugin.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-private.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-session.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-stream-transmitter.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-stream.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\Farsight2\gst-libs\gst\farsight\fs-transmitter.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\Generated\farsight2\gst-libs\farsight\fs-enum-types.h">
+      <Filter>Header Files\Generated</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\Generated\farsight2\gst-libs\farsight\fs-enumtypes.h">
+      <Filter>Header Files\Generated</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

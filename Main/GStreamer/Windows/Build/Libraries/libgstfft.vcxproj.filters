@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{37254ed5-a3d5-4a11-9752-9a28bed15a72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{6f5bf5f5-9058-4a9a-908a-7faa92e0eb84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4f574014-d7f4-4fc5-b74f-82d216df5c5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{b0a013e8-763b-40ae-9657-19eb2a6f939b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_f32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_f64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_s16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_s32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f64.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s16.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s32.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f64.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libgstfft.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfft.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf32.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf64.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts16.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts32.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

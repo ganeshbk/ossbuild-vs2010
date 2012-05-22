@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{056904B0-0226-40CB-88C0-6ED33D717861}</ProjectGuid>
+    <RootNamespace>gstreamersharpglue</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\..\Properties\gstreamer-sharp-bindings.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\..\Properties\gstreamer-sharp-bindings.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\..\Source\gstreamer-sharp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;GSTREAMERSHARPGLUE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)bin\$(Prefix)$(ProjectName)-$(ApiVersionString).dll</OutputFile>
+      <ModuleDefinitionFile>gstreamersharpglue.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>..\..\..\..\Source\gstreamer-sharp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;GSTREAMERSHARPGLUE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)bin\$(Prefix)$(ProjectName)-$(ApiVersionString).dll</OutputFile>
+      <ModuleDefinitionFile>gstreamersharpglue.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Applications\gst-xmlinspect.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-e70df4f91e57}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Libraries\libgstcdda.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f04}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Generated\gstreamer-sharp\gstreamer-sharp\glue\generated.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\adapter.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\buffer.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\caps.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\clock.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\clockentry.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\controller.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\controlsource.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\event.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\glib.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\gobject.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\indexentry.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\indexfactory.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\message.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\mixertrack.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\object.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\pad.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\structure.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\task.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\tunernorm.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\typefind.c">
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4090;4028;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4090;4028;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\videoutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gstreamersharpglue.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="generated">
+      <UniqueIdentifier>{2bf3e8d3-c7b2-4303-bc7a-f023a79132b9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-farsight\gst\rtpjitterbuffer\gstrtpjitterbuffer-marshal.c">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-farsight\gst\rtpjitterbuffer\async_jitter_queue.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-farsight\gst\rtpjitterbuffer\gstrtpjitterbuffer.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-farsight\gst\rtpjitterbuffer\gstrtpjitterbuffer-marshal.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-farsight\gst\rtpjitterbuffer\async_jitter_queue.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-farsight\gst\rtpjitterbuffer\gstrtpjitterbuffer.h" />
+  </ItemGroup>
+</Project>

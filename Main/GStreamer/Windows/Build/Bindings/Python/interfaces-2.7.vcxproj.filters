@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{086646e8-6f56-47d8-a4dc-3197861a6010}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{84f479ed-0e46-446f-946f-1c3f81fc0aa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files\Generated">
+      <UniqueIdentifier>{0b4bbb4e-d6ac-4fb5-b244-6d8eb6f8d4c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\common.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\interfacesmodule.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Generated\gst-python\interfaces.c">
+      <Filter>Sources Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

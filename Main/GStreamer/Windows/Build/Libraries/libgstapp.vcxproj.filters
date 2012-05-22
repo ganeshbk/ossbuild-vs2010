@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5eb41a1c-b8f3-493f-9b79-67a6d9a45449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{3b79bb1c-dde8-437e-bbfd-5d7b76500899}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{8c6acda6-3164-49f7-abbf-c822768a5133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated">
+      <UniqueIdentifier>{7fd9e807-2d1f-4ab9-a212-b8de794b7e5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{617382af-85dc-4bae-bb28-78296d9f9d6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappbuffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappsink.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappsrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Generated\gst-plugins-base\gst-libs\gst\app\gstapp-marshal.c">
+      <Filter>Source Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-base\win32\common\libgstapp.def">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappbuffer.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappsink.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\app\gstappsrc.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

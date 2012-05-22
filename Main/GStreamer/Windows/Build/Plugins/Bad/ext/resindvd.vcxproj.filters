@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{4a0d2a44-9318-42a1-ad3a-a72e6cd1eb6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{eff5d210-9e31-4476-bfaf-dbfd9ef1b6b7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstmpegdefs.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstmpegdemux.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstmpegdesc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstpesfilter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\resindvdbin.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\resindvdsrc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnaudiomunge.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnbasesrc.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsndec.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnparsetter.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnstreamselector.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnwrappedbuffer.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstmpegdemux.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstmpegdesc.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\gstpesfilter.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\plugin.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\resindvdbin.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\resindvdsrc.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnaudiomunge.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsndec.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnparsetter.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnstreamselector.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\ext\resindvd\rsnwrappedbuffer.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{8c1c1b68-a809-4e7b-ac0d-2d9d494824d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers Files\generated">
+      <UniqueIdentifier>{62e2f4ae-ff55-4919-8cc5-f10c78b5576a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{9c9d2307-428a-4a4f-98a6-52aa01149b19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files\generated">
+      <UniqueIdentifier>{0f3ad152-d2f3-4548-9cec-0c296e0b54e0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-cache.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-negotiation.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-specific.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-conference.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-discover-codecs.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-dtmf-event-source.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-dtmf-sound-source.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-participant.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-session.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-special-source.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-stream.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-substream.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Generated\farsight2\gst\fsrtpconference\fs-rtp-marshal.h">
+      <Filter>Headers Files\generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-cache.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-negotiation.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-codec-specific.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-conference-plugin.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-conference.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-discover-codecs.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-dtmf-event-source.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-dtmf-sound-source.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-participant.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-session.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-special-source.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-stream.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\fsrtpconference\fs-rtp-substream.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Generated\farsight2\gst\fsrtpconference\fs-rtp-marshal.c">
+      <Filter>Sources Files\generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

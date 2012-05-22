@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers">
+      <UniqueIdentifier>{c828be1e-a745-44bd-9a44-d7a4e5f75b3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{6a9dc78a-5f7e-4bd0-9928-aa669a213781}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstaacparse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstac3parse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstamrparse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstdcaparse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstflacparse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstmpegaudioparse.h">
+      <Filter>Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstaacparse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstac3parse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstamrparse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstdcaparse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstflacparse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\gstmpegaudioparse.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\audioparsers\plugin.c">
+      <Filter>Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

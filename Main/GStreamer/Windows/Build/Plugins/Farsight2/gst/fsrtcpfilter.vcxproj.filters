@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{c0f40831-9bc2-4dbf-9b37-30bd666f30db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{adaff1dc-f7dc-43f8-b7e9-2176c37c57bf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\rtcpfilter\fs-rtcp-filter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\rtcpfilter\fs-rtcp-filter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

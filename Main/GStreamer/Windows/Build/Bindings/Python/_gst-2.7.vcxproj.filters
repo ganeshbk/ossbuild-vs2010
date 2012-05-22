@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{849019a2-c515-4c98-8224-3c761b56eff6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{5150f419-6dd7-4f9e-ae76-6c19bb0fa4c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files\Generated">
+      <UniqueIdentifier>{78763a07-e0bf-4cb1-a078-9690f0d3bd65}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\common.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygst-private.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygst.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygstexception.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygstminiobject-private.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygstminiobject.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Source\gst-python\gst\pygstvalue.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\gst-argtypes.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\gstmodule.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\pygstexception.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\pygstiterator.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\pygstminiobject.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gst-python\gst\pygstvalue.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Generated\gst-python\gst.c">
+      <Filter>Sources Files\Generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

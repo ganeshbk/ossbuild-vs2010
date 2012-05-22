@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Shared\MSVC\Properties\Machine.props" />
+    <Import Project="..\..\..\..\Shared\MSVC\Properties\SDKs\Msvcrt.props" />
+    <Import Project="$(SolutionDir)Shared\MSVC\Properties\Libraries\LibXml.props" />
+    <Import Project="$(SolutionDir)Shared\MSVC\Properties\Libraries\GLib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <MajorVersion>0</MajorVersion>
+    <MinorVersion>10</MinorVersion>
+    <MicroVersion>0</MicroVersion>
+    <VersionString>$(MajorVersion).$(MinorVersion).$(MicroVersion)</VersionString>
+    <VersionNumber>01000</VersionNumber>
+    <ApiMajorVersion>0</ApiMajorVersion>
+    <ApiMinorVersion>10</ApiMinorVersion>
+    <ApiMicroVersion>0</ApiMicroVersion>
+    <ApiVersionString>$(ApiMajorVersion).$(ApiMinorVersion)</ApiVersionString>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>GStreamer</_PropertySheetDisplayName>
+    <IntDir>$(SolutionDir)Build\Windows\$(PlatformName)\$(Configuration)\obj\gstreamer\$(ProjectName)\</IntDir>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>$(OutDir)include\gstreamer-$(ApiVersionString)\;$(SolutionDir)Shared\Build\Windows\$(Platform)\include\gstreamer-$(ApiVersionString)\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;HAVE_CONFIG_H;HAVE_WIN32;YYFREE=free;YYMALLOC=malloc;YY_NO_UNISTD_H;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;wsock32.lib;intl.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <Version>$(VersionString)</Version>
+      <AdditionalLibraryDirectories>$(OutDir)lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>true</IgnoreAllDefaultLibraries>
+      <ModuleDefinitionFile>
+      </ModuleDefinitionFile>
+      <ProgramDatabaseFile>$(OutDir)pdb\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)lib\$(ProjectName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="MajorVersion">
+      <Value>$(MajorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MinorVersion">
+      <Value>$(MinorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="MicroVersion">
+      <Value>$(MicroVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VersionString">
+      <Value>$(VersionString)</Value>
+    </BuildMacro>
+    <BuildMacro Include="VersionNumber">
+      <Value>$(VersionNumber)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ApiMajorVersion">
+      <Value>$(ApiMajorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ApiMinorVersion">
+      <Value>$(ApiMinorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ApiMicroVersion">
+      <Value>$(ApiMicroVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="ApiVersionString">
+      <Value>$(ApiVersionString)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

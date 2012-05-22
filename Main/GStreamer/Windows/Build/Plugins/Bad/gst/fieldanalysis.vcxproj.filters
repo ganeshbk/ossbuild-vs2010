@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{9bd82faf-4ed2-42de-a2ce-203ec3033ff8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-bad\gst\fieldanalysis\gstfieldanalysisorc.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\fieldanalysis\gstfieldanalysis.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-bad\gst\fieldanalysis\gstfieldanalysisorc.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\fieldanalysis\gstfieldanalysis.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <LibOrcMajorVersion>0</LibOrcMajorVersion>
+    <LibOrcMinorVersion>4</LibOrcMinorVersion>
+    <LibOrcMicroVersion>5</LibOrcMicroVersion>
+    <LibOrcVersionString>$(LibOilMajorVersion).$(LibOilMinorVersion).$(LibOilMicroVersion)</LibOrcVersionString>
+    <LibOrcApiVersionString>$(LibOrcMajorVersion).$(LibOrcMinorVersion)</LibOrcApiVersionString>
+    <LibOrcLibVersionString>$(LibOrcApiVersionString)</LibOrcLibVersionString>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)Shared\Build\Windows\$(Platform)\include\orc-$(LibOrcApiVersionString);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>orc-$(LibOrcLibVersionString).lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="LibOrcMajorVersion">
+      <Value>$(LibOrcMajorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibOrcMinorVersion">
+      <Value>$(LibOrcMinorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibOrcMicroVersion">
+      <Value>$(LibOrcMicroVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibOrcVersionString">
+      <Value>$(LibOrcVersionString)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibOrcApiVersionString">
+      <Value>$(LibOrcApiVersionString)</Value>
+    </BuildMacro>
+    <BuildMacro Include="LibOrcLibVersionString">
+      <Value>$(LibOrcLibVersionString)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

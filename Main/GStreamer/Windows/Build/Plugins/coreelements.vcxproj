@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstcoreelements</ProjectName>
+    <ProjectGuid>{F987873B-2B88-4B1B-B627-F70DF4F91E51}</ProjectGuid>
+    <RootNamespace>libgstcoreelements</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\SDKs\Msvcrt-Compat.props" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Libraries\LibOil.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\SDKs\Msvcrt-Compat.props" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Libraries\LibOil.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\base</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\..\Source\gstreamer;..\..\..\Source\gstreamer\win32\common;..\..\..\Source\gstreamer\plugins\elements\;..\Libraries\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;LIBGSTBASE_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\crt\src\intel\dll_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\base</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Source\gstreamer;..\..\..\Source\gstreamer\win32\common;..\..\..\Source\gstreamer\plugins\elements\;..\Libraries\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBGSTELEMENTS_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\Libraries\libgstreamer.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e49}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstcapsfilter.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstelements.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfakesink.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfakesrc.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfdsink.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">G_OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">G_OS_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4005;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfdsrc.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfilesink.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfilesrc.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstfunnel.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstidentity.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstinputselector.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstmultiqueue.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstoutputselector.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstqueue.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstqueue2.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gsttee.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gsttypefindelement.c" />
+    <ClCompile Include="..\..\..\Source\gstreamer\plugins\elements\gstvalve.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstcapsfilter.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfakesink.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfakesrc.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfdsink.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfdsrc.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfilesink.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfilesrc.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstfunnel.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstidentity.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstinputselector.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstmultiqueue.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstoutputselector.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstqueue.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstqueue2.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gsttee.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gsttypefindelement.h" />
+    <ClInclude Include="..\..\..\Source\gstreamer\plugins\elements\gstvalve.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

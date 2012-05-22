@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{a7054e9c-ca3b-4d62-836c-6dad097d6fa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Generated">
+      <UniqueIdentifier>{d519a535-ecae-4bf5-a412-e81165404971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{446c07a4-3590-41c5-8443-1f2fe6093177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public">
+      <UniqueIdentifier>{2b1c3183-2d0d-4d83-aba8-8439be106d28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Public\Generated">
+      <UniqueIdentifier>{d0e02da2-5111-4911-b006-46759eaf909a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{23900f76-891e-4cbc-b7eb-e77771f74008}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstbasecamerasrc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstcamerabin-enum.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstcamerabinpreview.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstbasecamerasrc.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstcamerabin-enum.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\basecamerabinsrc\gstcamerabinpreview.h">
+      <Filter>Header Files\Public</Filter>
+    </Header_Installer_Tool>
+  </ItemGroup>
+</Project>

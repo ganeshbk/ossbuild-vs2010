@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{bb3d7fd0-63f6-443b-bc08-fabf0f2a2266}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-base\gst\encoding\gstencode-marshal.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gstencodebin.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gstsmartencoder.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gststreamcombiner.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gststreamsplitter.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-base\gst\encoding\gstencode-marshal.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gstencodebin.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gstsmartencoder.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gststreamcombiner.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-base\gst\encoding\gststreamsplitter.h" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="..\..\..\..\Shared\MSVC\Properties\SDKs\Python25.props" />
+    <Import Project="gstreamer-plugin.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>GStreamer Python v2.5 Plugins</_PropertySheetDisplayName>
+    <IntDir>$(SolutionDir)Build\Windows\$(PlatformName)\$(Configuration)\obj\gstreamer\plugins\python-2.5-$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\..\..\Source\gst-python\gst;..\..\..\..\..\Source\gstreamer\win32\common\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gstreamer-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)bin\plugins\lib$(Prefix)$(ProjectName)-v$(PythonApiVersion).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir)lib\plugins\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb\gstreamer\bindings\python-2.5\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)lib\plugins\$(ProjectName)-v$(PythonApiVersion).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{a3b6d28a-9f17-4792-a8f7-91dfa3295e54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{2096ebb5-795a-4d23-ab11-d7e89e566687}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\gst\videoanyrate\videoanyrate.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\gst\videoanyrate\videoanyrate.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

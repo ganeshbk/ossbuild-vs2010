@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstrtp</ProjectName>
+    <ProjectGuid>{F456161A-E627-43C7-B372-A82FDF9845BE}</ProjectGuid>
+    <RootNamespace>libgstrtp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\..\..\Properties\gstreamer-plugin-good.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\..\..\Properties\gstreamer-plugin-good.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gstrtp.lib;gstaudio.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\crt\src\intel\dll_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstaudio.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f01}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstrtp.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f10}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgsttag.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f05}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\fnv1hash.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstasteriskh263.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpac3depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpac3pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpamrdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpamrpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpbvdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpbvpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpceltdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpceltpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpchannels.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdvdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdvpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg722depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg722pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg723depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg723pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg726depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg726pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg729depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg729pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgsmdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgsmpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgstdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgstpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263pdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263ppay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph264depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph264pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpilbcdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpilbcpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpj2kdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpj2kpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpjpegdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpjpegpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpL16depay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpL16pay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp1sdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp2tdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp2tpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4adepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4apay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4gdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4gpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4vdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4vpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpadepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpapay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmparobustdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpvdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpvpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmadepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmapay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmudepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmupay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpqcelpdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpqdmdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsirendepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsirenpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpspeexdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpspeexpay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsv3vdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtptheoradepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtptheorapay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvorbisdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvorbispay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvrawdepay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvrawpay.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\fnv1hash.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstasteriskh263.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtp.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpac3depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpac3pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpamrdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpamrpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpbvdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpbvpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpceltdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpceltpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpchannels.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdvdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpdvpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg722depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg722pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg723depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg723pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg726depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg726pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg729depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpg729pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgsmdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgsmpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgstdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpgstpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263pdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph263ppay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph264depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtph264pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpilbcdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpilbcpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpj2kdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpj2kpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpjpegdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpjpegpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpL16depay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpL16pay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp1sdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp2tdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp2tpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4adepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4apay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4gdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4gpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4vdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmp4vpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpadepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpapay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmparobustdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpvdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmpvpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmadepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmapay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmudepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtppcmupay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpqcelpdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpqdmdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsirendepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsirenpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpspeexdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpspeexpay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpsv3vdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtptheoradepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtptheorapay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvorbisdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvorbispay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvrawdepay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpvrawpay.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

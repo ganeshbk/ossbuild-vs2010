@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <PythonApiMajorVersion>2</PythonApiMajorVersion>
+    <PythonApiMinorVersion>5</PythonApiMinorVersion>
+    <PythonApiMicroVersion>4</PythonApiMicroVersion>
+    <PythonVersionString>$(PythonApiMajorVersion).$(PythonApiMinorVersion).$(PythonApiMicroVersion)</PythonVersionString>
+    <PythonApiVersion>$(PythonApiMajorVersion).$(PythonApiMinorVersion)</PythonApiVersion>
+    <PythonLibDirectory>$(SolutionDir)Shared\SDKs\Python\lib\$(Platform)</PythonLibDirectory>
+  </PropertyGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>Python v2.5</_PropertySheetDisplayName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Shared\SDKs\Python\include;$(SolutionDir)\Shared\SDKs\Python\include\pygtk-2.0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>PYTHON_VERSION="$(PythonApiVersion)";PY_LIB_LOC="C:\\Python";PY_LIB_SUFFIX="dll";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>python25.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Shared\SDKs\Python\lib\$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <BuildMacro Include="PythonApiMajorVersion">
+      <Value>$(PythonApiMajorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PythonApiMinorVersion">
+      <Value>$(PythonApiMinorVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PythonApiMicroVersion">
+      <Value>$(PythonApiMicroVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PythonVersionString">
+      <Value>$(PythonVersionString)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PythonApiVersion">
+      <Value>$(PythonApiVersion)</Value>
+    </BuildMacro>
+    <BuildMacro Include="PythonLibDirectory">
+      <Value>$(PythonLibDirectory)</Value>
+    </BuildMacro>
+  </ItemGroup>
+</Project>

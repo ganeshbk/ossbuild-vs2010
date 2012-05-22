@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{37bf8e32-06de-4efe-9daf-ee634345a238}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{81e242b5-400c-423e-a2f4-ad9bbb614b09}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\multicast\fs-multicast-stream-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\multicast\fs-multicast-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\multicast\fs-multicast-stream-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\multicast\fs-multicast-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

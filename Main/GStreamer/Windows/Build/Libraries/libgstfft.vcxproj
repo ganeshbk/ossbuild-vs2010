@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstfft</ProjectName>
+    <ProjectGuid>{AB87873B-2B88-4B1B-B627-F70DF4F91F06}</ProjectGuid>
+    <RootNamespace>libgstfft</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <SDK_VSProps_Generation_ToolAfterTargets>PreBuildEvent</SDK_VSProps_Generation_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SDK_VSProps_Generation_Tool</Symbols_Generator_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Symbols_Generator_Tool</SED_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_SED_Tool</Pkg_Config_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Pkg_Config_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Header_Installer_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Header_Installer_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_Header_Installer_Tool</Copy_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Copy_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Perl_3_Tool</Bison_ToolAfterTargets>
+    <Flex_ToolAfterTargets>_Bison_Tool</Flex_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Flex_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Glib_Make_Enums_Tool</C_Preprocessor_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_C_Preprocessor_Tool</CommandLineToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>CustomBuild</DotIn_Generator_ToolAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <SDK_VSProps_Generation_ToolAfterTargets>PreBuildEvent</SDK_VSProps_Generation_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SDK_VSProps_Generation_Tool</Symbols_Generator_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Symbols_Generator_Tool</SED_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_SED_Tool</Pkg_Config_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Pkg_Config_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Header_Installer_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Header_Installer_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_Header_Installer_Tool</Copy_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Copy_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Perl_3_Tool</Bison_ToolAfterTargets>
+    <Flex_ToolAfterTargets>_Bison_Tool</Flex_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Flex_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Glib_Make_Enums_Tool</C_Preprocessor_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_C_Preprocessor_Tool</CommandLineToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>CustomBuild</DotIn_Generator_ToolAfterTargets>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-base-lib.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-base-lib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CommandLineTool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CommandLineTool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\fft</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\..\Source\gst-plugins-base\gst-libs\gst\fft;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBGSTFFT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\crt\src\intel\dll_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>libgstfft.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\fft</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Source\gst-plugins-base\gst-libs\gst\fft;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBGSTFFT_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>libgstfft.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="libgstcontroller.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e52}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="libgstdataprotocol.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e53}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="libgstnet.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e54}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_f32.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_f64.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_s16.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\_kiss_fft_guts_s32.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f32.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f64.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s16.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s32.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f32.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f64.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s16.h" />
+    <ClInclude Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s32.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfft.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf32.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf64.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts16.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts32.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfft.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf32.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstfftf64.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts16.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\gstffts32.c">
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f32.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_f64.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s16.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fft_s32.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f32.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_f64.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s16.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\fft\kiss_fftr_s32.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libgstfft.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

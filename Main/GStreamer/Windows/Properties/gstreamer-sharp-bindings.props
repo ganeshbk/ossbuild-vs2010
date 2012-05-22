@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Main\GStreamer\Windows\Properties\gstreamer.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>GStreamer DotNet Bindings</_PropertySheetDisplayName>
+    <IntDir>$(SolutionDir)Build\Windows\$(PlatformName)\$(Configuration)\obj\gstreamer\bindings\dotnet\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gstreamer-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)bin\lib$(Prefix)$(ProjectName)-$(ApiVersionString).dll</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir)lib\plugins;$(OutDir)lib\bindings\dotnet;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb\bindings\dotnet\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)lib\bindings\dotnet\$(ProjectName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

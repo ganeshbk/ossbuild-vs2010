@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{32b01863-e3d3-4f55-b9e5-b5361f0f5e6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{2c806149-31fb-422b-b9bf-7949bde49bbe}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Generated\gstreamer-sharp\gstreamer-sharp\glue\generated.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\adapter.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\buffer.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\caps.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\clock.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\clockentry.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\controller.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\controlsource.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\event.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\glib.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\gobject.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\indexentry.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\indexfactory.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\message.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\mixertrack.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\object.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\pad.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\structure.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\task.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\tunernorm.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\typefind.c" />
+    <ClCompile Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\glue\videoutil.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gstreamersharpglue.def">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{d7c6ac4b-b245-4a40-bdba-df3f4f5e1f1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{62593f1c-6bde-4005-8f46-b35e3406a94e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpeg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegcfg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegcodecmap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegenc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegpipe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegutils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpeg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegaudioresample.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegcfg.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegcodecmap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegdec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegdeinterlace.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegdemux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegenc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegmux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegprotocol.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-ffmpeg\ext\ffmpeg\gstffmpegutils.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

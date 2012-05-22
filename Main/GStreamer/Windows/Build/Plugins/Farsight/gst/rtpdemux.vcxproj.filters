@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="generated">
+      <UniqueIdentifier>{db0748c9-d501-4ef6-97cd-040ad5f74c9d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-farsight\gst\rtpdemux\gstrtpdemux-marshal.c">
+      <Filter>generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-farsight\gst\rtpdemux\gstrtpdemux.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-farsight\gst\rtpdemux\gstrtpdemux-marshal.h">
+      <Filter>generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

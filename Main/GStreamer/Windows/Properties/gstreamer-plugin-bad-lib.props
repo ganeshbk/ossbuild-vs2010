@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Main\GStreamer\Windows\Properties\gstreamer-plugin-bad.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>GStreamer Bad Plugin Libs</_PropertySheetDisplayName>
+    <IntDir>$(SolutionDir)Build\Windows\$(PlatformName)\$(Configuration)\obj\gstreamer\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\..\Source\gst-plugins-bad\gst-libs;..\..\..\Source\gst-plugins-bad\win32\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(OutDir)bin\lib$(Prefix)$(ProjectName)-$(ApiMajorVersion).$(ApiMinorVersion).dll</OutputFile>
+      <ImportLibrary>$(OutDir)lib\$(ProjectName)-$(ApiMajorVersion).$(ApiMinorVersion).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{87cd7406-8e88-4879-9e7f-856902c1fd22}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-bad\gst\colorspace\gstcolorspaceorc.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\colorspace\colorspace.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\colorspace\gstcolorspace.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-bad\gst\colorspace\gstcolorspaceorc.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\colorspace\colorspace.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\colorspace\gstcolorspace.h" />
+  </ItemGroup>
+</Project>

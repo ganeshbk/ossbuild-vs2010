@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(SolutionDir)Main\GStreamer\Windows\Properties\gstreamer.props" />
+    <Import Project="..\..\..\..\Shared\MSVC\Properties\SDKs\Python27.props" />
+  </ImportGroup>
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <_PropertySheetDisplayName>Farsight Python-2.7 Bindings</_PropertySheetDisplayName>
+    <IntDir>$(SolutionDir)Build\Windows\$(PlatformName)\$(Configuration)\obj\gstreamer\bindings\python-2.7\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>gstreamer-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)lib\python2.7\site-packages\farsight\$(ProjectName).pyd</OutputFile>
+      <AdditionalLibraryDirectories>$(OutDir)lib\plugins\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ProgramDatabaseFile>$(OutDir)pdb\gstreamer\bindings\python-2.7\$(TargetName).pdb</ProgramDatabaseFile>
+      <ImportLibrary>$(OutDir)lib\python2.7\site-packages\farsight\$(ProjectName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+</Project>

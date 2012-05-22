@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstphotography</ProjectName>
+    <ProjectGuid>{F3A7C701-0ACC-0BB0-CE27-AA0DFFFF2000}</ProjectGuid>
+    <RootNamespace>libgstphotography</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <Header_Installer_ToolAfterTargets>PreBuildEvent</Header_Installer_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Header_Installer_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <SDK_VSProps_Generation_ToolAfterTargets>_Glib_Make_Enums_Tool</SDK_VSProps_Generation_ToolAfterTargets>
+    <GObject_Marshaller_Generation_ToolAfterTargets>_SDK_VSProps_Generation_Tool</GObject_Marshaller_Generation_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_GObject_Marshaller_Generation_Tool</Pkg_Config_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Pkg_Config_Tool</SED_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SED_Tool</Symbols_Generator_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Symbols_Generator_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Bison_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_Bison_Tool</CommandLineToolAfterTargets>
+    <Flex_ToolAfterTargets>_CommandLineTool</Flex_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Flex_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>_Perl_3_Tool</DotIn_Generator_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_DotIn_Generator_Tool</Copy_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Copy_Tool</C_Preprocessor_ToolAfterTargets>
+    <Yasm_ToolAfterTargets>CustomBuild</Yasm_ToolAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <Header_Installer_ToolAfterTargets>PreBuildEvent</Header_Installer_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Header_Installer_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <SDK_VSProps_Generation_ToolAfterTargets>_Glib_Make_Enums_Tool</SDK_VSProps_Generation_ToolAfterTargets>
+    <GObject_Marshaller_Generation_ToolAfterTargets>_SDK_VSProps_Generation_Tool</GObject_Marshaller_Generation_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_GObject_Marshaller_Generation_Tool</Pkg_Config_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Pkg_Config_Tool</SED_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SED_Tool</Symbols_Generator_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Symbols_Generator_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Bison_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_Bison_Tool</CommandLineToolAfterTargets>
+    <Flex_ToolAfterTargets>_CommandLineTool</Flex_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Flex_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>_Perl_3_Tool</DotIn_Generator_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_DotIn_Generator_Tool</Copy_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Copy_Tool</C_Preprocessor_ToolAfterTargets>
+    <Yasm_ToolAfterTargets>CustomBuild</Yasm_ToolAfterTargets>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-bad-lib.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-bad-lib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_C_Preprocessor_Tool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_C_Preprocessor_Tool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\interfaces</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>$(IntDir);..\..\..\Source\gst-plugins-bad\gst-libs\gst\interfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GST_USE_UNSTABLE_API;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>libgstaudio.lib;Winmm.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\Source\gst-plugins-bad\win32\common\libgstphotography.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\interfaces</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>$(IntDir);..\..\..\Source\gst-plugins-bad\gst-libs\gst\interfaces;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GST_USE_UNSTABLE_API;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\Source\gst-plugins-bad\win32\common\libgstphotography.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="libgstinterfaces.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f02}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\interfaces\photography.c" />
+    <ClCompile Include="..\..\Generated\gst-plugins-bad\gst-libs\gst\interfaces\photography-enumtypes.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-bad\gst-libs\gst\interfaces\photography.h" />
+    <Header_Installer_Tool Include="..\..\Generated\gst-plugins-bad\gst-libs\gst\interfaces\photography-enumtypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-bad\win32\common\libgstphotography.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

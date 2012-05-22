@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Headers Files">
+      <UniqueIdentifier>{f1dd6f82-e910-4379-be18-e2e91c57141f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers Files\generated">
+      <UniqueIdentifier>{0839b35b-39fb-4615-91de-4cf39afecaeb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files">
+      <UniqueIdentifier>{05791f19-7761-4eee-bb6c-0bae75413ec8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources Files\generated">
+      <UniqueIdentifier>{c9dfa658-b8de-4c01-a36c-6b90f80b37cf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-component.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-stream-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-transmitter.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\stun.h">
+      <Filter>Headers Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Generated\farsight2\transmitters\rawudp\fs-rawudp-marshal.h">
+      <Filter>Headers Files\generated</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-component.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-stream-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\farsight2\transmitters\rawudp\fs-rawudp-transmitter.c">
+      <Filter>Sources Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Generated\farsight2\transmitters\rawudp\fs-rawudp-marshal.c">
+      <Filter>Sources Files\generated</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

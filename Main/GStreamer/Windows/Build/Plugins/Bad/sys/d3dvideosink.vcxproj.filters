@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{4890a548-be0b-436e-9a14-a848e9789d72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Headers">
+      <UniqueIdentifier>{8e78b844-a34f-4a60-a691-10d137cc9174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Headers\DirectX9">
+      <UniqueIdentifier>{3e2b3749-df02-4bb4-a1e8-f21d84129ac6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Headers\DirectX10">
+      <UniqueIdentifier>{544cfe78-dc9c-4d82-bdf5-c8d39baeb428}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Headers\DirectX11">
+      <UniqueIdentifier>{2e95ee34-9f5e-4b26-baf7-00731055e04e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Source">
+      <UniqueIdentifier>{8b29c8e3-e797-4fff-80ee-1285b73e497e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Source\DirectX9">
+      <UniqueIdentifier>{bc11331c-5cec-474b-b4a8-7f819a2ae786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Source\DirectX10">
+      <UniqueIdentifier>{19b70d7a-cea2-4cf3-9adc-c541ebb6383c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Source\DirectX11">
+      <UniqueIdentifier>{976c4693-44f3-4c7e-a7be-bb4ce54903ca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\d3d.h">
+      <Filter>DirectX\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx.h">
+      <Filter>DirectX\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\dx.h">
+      <Filter>DirectX\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx9\dx9.h">
+      <Filter>DirectX\Headers\DirectX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx9\dx9_d3d.h">
+      <Filter>DirectX\Headers\DirectX9</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx10\dx10.h">
+      <Filter>DirectX\Headers\DirectX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx10\dx10_d3d.h">
+      <Filter>DirectX\Headers\DirectX10</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx11\dx11.h">
+      <Filter>DirectX\Headers\DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx11\dx11_d3d.h">
+      <Filter>DirectX\Headers\DirectX11</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\d3dvideosink.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\d3d.c">
+      <Filter>DirectX\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\dx.c">
+      <Filter>DirectX\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx9\dx9.c">
+      <Filter>DirectX\Source\DirectX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx9\dx9_d3d.c">
+      <Filter>DirectX\Source\DirectX9</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx10\dx10.c">
+      <Filter>DirectX\Source\DirectX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx10\dx10_d3d.c">
+      <Filter>DirectX\Source\DirectX10</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx11\dx11.c">
+      <Filter>DirectX\Source\DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\directx\directx11\dx11_d3d.c">
+      <Filter>DirectX\Source\DirectX11</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\sys\d3dvideosink\d3dvideosink.c" />
+  </ItemGroup>
+</Project>

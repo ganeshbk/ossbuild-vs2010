@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstrtp</ProjectName>
+    <ProjectGuid>{AB87873B-2B88-4B1B-B627-F70DF4F91F10}</ProjectGuid>
+    <RootNamespace>libgstrtp</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <SDK_VSProps_Generation_ToolAfterTargets>PreBuildEvent</SDK_VSProps_Generation_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SDK_VSProps_Generation_Tool</Symbols_Generator_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Symbols_Generator_Tool</SED_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_SED_Tool</Pkg_Config_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Pkg_Config_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Header_Installer_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Header_Installer_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_Header_Installer_Tool</Copy_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Copy_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Perl_3_Tool</Bison_ToolAfterTargets>
+    <Flex_ToolAfterTargets>_Bison_Tool</Flex_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Flex_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Glib_Make_Enums_Tool</C_Preprocessor_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_C_Preprocessor_Tool</CommandLineToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>CustomBuild</DotIn_Generator_ToolAfterTargets>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <SDK_VSProps_Generation_ToolAfterTargets>PreBuildEvent</SDK_VSProps_Generation_ToolAfterTargets>
+    <Symbols_Generator_ToolAfterTargets>_SDK_VSProps_Generation_Tool</Symbols_Generator_ToolAfterTargets>
+    <SED_ToolAfterTargets>_Symbols_Generator_Tool</SED_ToolAfterTargets>
+    <Pkg_Config_ToolAfterTargets>_SED_Tool</Pkg_Config_ToolAfterTargets>
+    <Pkg_Config_OAH_Dependencies_ToolAfterTargets>_Pkg_Config_Tool</Pkg_Config_OAH_Dependencies_ToolAfterTargets>
+    <Header_Installer_ToolAfterTargets>_Pkg_Config_OAH_Dependencies_Tool</Header_Installer_ToolAfterTargets>
+    <Copy_ToolAfterTargets>_Header_Installer_Tool</Copy_ToolAfterTargets>
+    <Perl_ToolAfterTargets>_Copy_Tool</Perl_ToolAfterTargets>
+    <Perl_2_ToolAfterTargets>_Perl_Tool</Perl_2_ToolAfterTargets>
+    <Perl_3_ToolAfterTargets>_Perl_2_Tool</Perl_3_ToolAfterTargets>
+    <Bison_ToolAfterTargets>_Perl_3_Tool</Bison_ToolAfterTargets>
+    <Flex_ToolAfterTargets>_Bison_Tool</Flex_ToolAfterTargets>
+    <Glib_Make_Enums_ToolAfterTargets>_Flex_Tool</Glib_Make_Enums_ToolAfterTargets>
+    <C_Preprocessor_ToolAfterTargets>_Glib_Make_Enums_Tool</C_Preprocessor_ToolAfterTargets>
+    <CommandLineToolAfterTargets>_C_Preprocessor_Tool</CommandLineToolAfterTargets>
+    <DotIn_Generator_ToolAfterTargets>CustomBuild</DotIn_Generator_ToolAfterTargets>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-base-lib.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\Properties\gstreamer-plugin-base-lib.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_CommandLineTool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <CustomBuildAfterTargets Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">_CommandLineTool</CustomBuildAfterTargets>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\rtp</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBGSTRTP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\crt\src\intel\dll_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ModuleDefinitionFile>..\..\..\Source\gst-plugins-base\win32\common\libgstrtp.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Header_Installer_Tool>
+      <ModuleName>gstreamer-$(ApiVersionString)\gst\rtp</ModuleName>
+    </Header_Installer_Tool>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBGSTRTP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <ModuleDefinitionFile>..\..\..\Source\gst-plugins-base\win32\common\libgstrtp.def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="libgstcontroller.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e52}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="libgstreamer.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e49}</Project>
+      <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertpaudiopayload.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertpdepayload.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertppayload.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtcpbuffer.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtpbuffer.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmparobustdepay.h" />
+    <Header_Installer_Tool Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtppayloads.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertpaudiopayload.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertpdepayload.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstbasertppayload.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtcpbuffer.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtpbuffer.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-good\gst\rtp\gstrtpmparobustdepay.c" />
+    <ClCompile Include="..\..\..\Source\gst-plugins-base\gst-libs\gst\rtp\gstrtppayloads.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Source\gst-plugins-base\win32\common\libgstrtp.def" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

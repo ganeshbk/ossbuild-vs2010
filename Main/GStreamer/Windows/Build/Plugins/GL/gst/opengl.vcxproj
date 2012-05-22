@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>gstopengl</ProjectName>
+    <ProjectGuid>{0597EA2B-A46C-4CF1-B534-011D6DB91B96}</ProjectGuid>
+    <RootNamespace>libgstgl</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="..\..\..\..\..\..\..\Common.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Release.props" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Libraries\LibPng.props" />
+    <Import Project="$(SolutionDir)Main\GStreamer\Windows\Properties\gstreamer-plugin-gl.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Platforms\x86-Debug.props" />
+    <Import Project="..\..\..\..\..\..\..\Shared\MSVC\Properties\Libraries\LibPng.props" />
+    <Import Project="$(SolutionDir)Main\GStreamer\Windows\Properties\gstreamer-plugin-gl.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>..\Source\gst-plugins-base\gst\gl;.;$(OutDir)include\gstreamer-$(ApiVersionString)\gst\gl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBgstgl_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gstgl-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\Microsoft Visual Studio .NET 2003\Vc7\crt\src\intel\dll_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>..\Source\gst-plugins-base\gst\gl;.\..\;$(OutDir)include\gstreamer-$(ApiVersionString)\gst\gl;./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>LIBgstgl_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>gstgl-0.10.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstreamer.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e49}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstgl.vcxproj">
+      <Project>{09475780-cde5-45ad-bf90-be489dd12a23}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstinterfaces.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f02}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+      <Private>false</Private>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gltestsrc.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglbumper.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglcolorscale.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldeinterlace.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldifferencematte.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldownload.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterapp.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterblur.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfiltercube.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterglass.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterlaplacian.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterreflectedscreen.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfiltersobel.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglimagesink.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglmosaic.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgloverlay.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgltestsrc.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglupload.h" />
+    <Header_Installer_Tool Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectlumatocurve.h">
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgleffects.h">
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectscurves.h">
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+    </Header_Installer_Tool>
+    <Header_Installer_Tool Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectssources.h">
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+      <ModuleName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">gstreamer-$(ApiVersionString)\gst\gl</ModuleName>
+    </Header_Installer_Tool>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gltestsrc.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglbumper.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglcolorscale.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldeinterlace.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldifferencematte.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgldownload.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgleffects.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterapp.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterblur.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfiltercube.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterglass.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterlaplacian.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfilterreflectedscreen.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglfiltersobel.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglimagesink.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglmosaic.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgloverlay.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstgltestsrc.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstglupload.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\gstopengl.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectbulge.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectfisheye.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectglow.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectidentity.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectlumatocurve.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectmirror.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectrgbtocurve.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectsin.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectsquare.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectsqueeze.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectssources.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectstretch.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffecttunnel.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffecttwirl.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-gl\gst\gl\effects\gstgleffectxray.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\..\..\..\..\..\Common.targets" />
+  </ImportGroup>
+</Project>

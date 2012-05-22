@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Generated">
+      <UniqueIdentifier>{1065f111-38f2-4f99-bbb5-8e159baa3355}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-good\gst\videomixer\blendorc.c">
+      <Filter>Generated</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\blend.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\gstcollectpads2.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixer.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixer2.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-good\gst\videomixer\blendorc.h">
+      <Filter>Generated</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\blend.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\blend_mmx.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\gstcollectpads2.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixer.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixer2.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixer2pad.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\videomixer\videomixerpad.h" />
+  </ItemGroup>
+</Project>

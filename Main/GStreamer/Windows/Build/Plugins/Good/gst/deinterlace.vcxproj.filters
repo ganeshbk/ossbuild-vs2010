@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tvtime">
+      <UniqueIdentifier>{886b9c2e-cf52-472b-b03f-c087e864670a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tvtime\tomsmocomp">
+      <UniqueIdentifier>{174e46bf-b2f6-4841-82f8-286121809b4d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\greedy.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\greedyh.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\linear.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\linearblend.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\scalerbob.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\vfir.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\weave.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\weavebff.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\weavetff.c">
+      <Filter>tvtime</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\gstdeinterlace.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\gstdeinterlacemethod.c" />
+    <ClCompile Include="..\..\..\..\Generated\gst-plugins-good\gst\deinterlace\tvtime.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\greedyh.asm">
+      <Filter>tvtime</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\x86-64_macros.inc">
+      <Filter>tvtime</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoop0A.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopBottom.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopEdgeA.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopEdgeA8.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopOddA.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopOddA2.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopOddA6.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopOddAH.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopOddAH2.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopTop.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopVA.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\SearchLoopVAH.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\StrangeBob.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\TomsMoCompAll.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\TomsMoCompAll2.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+    <None Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\WierdBob.inc">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\greedyhmacros.h">
+      <Filter>tvtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\mmx.h">
+      <Filter>tvtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\plugins.h">
+      <Filter>tvtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\sse.h">
+      <Filter>tvtime</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\tvtime\tomsmocomp\tomsmocompmacros.h">
+      <Filter>tvtime\tomsmocomp</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\gstdeinterlacemethod.h" />
+    <ClInclude Include="..\..\..\..\Generated\gst-plugins-good\gst\deinterlace\tvtime.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Header_Installer_Tool Include="..\..\..\..\..\Source\gst-plugins-good\gst\deinterlace\gstdeinterlace.h" />
+  </ItemGroup>
+</Project>

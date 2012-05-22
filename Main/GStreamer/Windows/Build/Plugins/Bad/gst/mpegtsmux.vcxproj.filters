@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tsmux">
+      <UniqueIdentifier>{0e5ad58c-eab7-4495-be9a-be454f824efd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\crc.h">
+      <Filter>tsmux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\tsmux.h">
+      <Filter>tsmux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\tsmuxcommon.h">
+      <Filter>tsmux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\tsmuxstream.h">
+      <Filter>tsmux</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux_aac.h" />
+    <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux_h264.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\tsmux.c">
+      <Filter>tsmux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\tsmux\tsmuxstream.c">
+      <Filter>tsmux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux_aac.c" />
+    <ClCompile Include="..\..\..\..\..\Source\gst-plugins-bad\gst\mpegtsmux\mpegtsmux_h264.c" />
+  </ItemGroup>
+</Project>
