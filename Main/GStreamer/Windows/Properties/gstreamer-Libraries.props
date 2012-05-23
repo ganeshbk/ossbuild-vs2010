@@ -7,6 +7,7 @@
     <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
     <_PropertySheetDisplayName>GStreamer Core Libraries</_PropertySheetDisplayName>
     <GenerateManifest>false</GenerateManifest>
+    <TargetName>lib$(Prefix)$(ProjectName)-$(ApiMajorVersion).$(ApiMinorVersion)</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
