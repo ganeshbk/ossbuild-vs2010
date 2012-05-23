@@ -144,6 +144,22 @@ namespace Gst.CorePlugins {
 			}
 		}
 
+		[Gst.GLib.Property ("enable-last-buffer")]
+		public bool EnableLastBuffer {
+			get {
+				Gst.GLib.Value val = GetProperty ("enable-last-buffer");
+				bool ret = (bool) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "enable-last-buffer");
+				val.Val = value;
+				SetProperty ("enable-last-buffer", val);
+				val.Dispose ();
+			}
+		}
+
 		[Gst.GLib.Property ("last-buffer")]
 		public Gst.Buffer LastBuffer {
 			get {
@@ -188,6 +204,22 @@ namespace Gst.CorePlugins {
 				Gst.GLib.Value val = new Gst.GLib.Value (this, "render-delay");
 				val.Val = value;
 				SetProperty ("render-delay", val);
+				val.Dispose ();
+			}
+		}
+
+		[Gst.GLib.Property ("throttle-time")]
+		public ulong ThrottleTime {
+			get {
+				Gst.GLib.Value val = GetProperty ("throttle-time");
+				ulong ret = (ulong) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "throttle-time");
+				val.Val = value;
+				SetProperty ("throttle-time", val);
 				val.Dispose ();
 			}
 		}

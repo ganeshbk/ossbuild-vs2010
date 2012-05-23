@@ -702,6 +702,9 @@ static extern bool gst_bin_add (IntPtr raw, IntPtr element);
 [DllImport ("libgobject-2.0-0.dll") ]
 static extern IntPtr g_object_ref (IntPtr raw);
 
+[DllImport("libgstreamer-0.10.dll", CallingConvention=CallingConvention.Cdecl)]
+static extern void _gst_debug_bin_to_dot_file(IntPtr bin, DebugGraphDetails details, IntPtr file_name);
+
 public bool Add (Gst.Element element) {
   bool raw_ret = gst_bin_add (Handle, element == null ? IntPtr.Zero : element.Handle);
   if (raw_ret) {
@@ -756,6 +759,23 @@ public IEnumerable GetAllByInterface (System.Type type) {
   Gst.GLib.GType t = (Gst.GLib.GType) type;
 
   return GetAllByInterface (t);
+}
+
+[Flags]
+public enum DebugGraphDetails
+{
+    MediaType         = (1<<0),
+    CapsDetails       = (1<<1),
+    NonDefaultParams  = (1<<2),
+    States            = (1<<3),
+    All               = ((1<<4)-1)
+}
+
+public void DebugToDotFile(string filename, DebugGraphDetails details = DebugGraphDetails.All)
+{
+  IntPtr native_name = Gst.GLib.Marshaller.StringToPtrGStrdup(filename);
+  _gst_debug_bin_to_dot_file(Handle, details, native_name);
+  Gst.GLib.Marshaller.Free(native_name);
 }
 
 #endregion

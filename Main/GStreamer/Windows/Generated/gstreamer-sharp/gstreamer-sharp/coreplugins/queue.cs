@@ -208,6 +208,22 @@ namespace Gst.CorePlugins {
 			}
 		}
 
+		[Gst.GLib.Property ("silent")]
+		public bool Silent {
+			get {
+				Gst.GLib.Value val = GetProperty ("silent");
+				bool ret = (bool) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "silent");
+				val.Val = value;
+				SetProperty ("silent", val);
+				val.Dispose ();
+			}
+		}
+
 
 		public event SignalHandler Underrun {
 			add {

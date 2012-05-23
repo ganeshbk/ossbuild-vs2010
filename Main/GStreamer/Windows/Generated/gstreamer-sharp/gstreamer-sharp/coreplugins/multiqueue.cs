@@ -144,6 +144,54 @@ namespace Gst.CorePlugins {
 			}
 		}
 
+		[Gst.GLib.Property ("use-buffering")]
+		public bool UseBuffering {
+			get {
+				Gst.GLib.Value val = GetProperty ("use-buffering");
+				bool ret = (bool) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "use-buffering");
+				val.Val = value;
+				SetProperty ("use-buffering", val);
+				val.Dispose ();
+			}
+		}
+
+		[Gst.GLib.Property ("low-percent")]
+		public int LowPercent {
+			get {
+				Gst.GLib.Value val = GetProperty ("low-percent");
+				int ret = (int) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "low-percent");
+				val.Val = value;
+				SetProperty ("low-percent", val);
+				val.Dispose ();
+			}
+		}
+
+		[Gst.GLib.Property ("high-percent")]
+		public int HighPercent {
+			get {
+				Gst.GLib.Value val = GetProperty ("high-percent");
+				int ret = (int) val.Val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value (this, "high-percent");
+				val.Val = value;
+				SetProperty ("high-percent", val);
+				val.Dispose ();
+			}
+		}
+
 
 		public event SignalHandler Underrun {
 			add {
