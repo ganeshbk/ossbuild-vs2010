@@ -109,6 +109,11 @@
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-ugly\gst\mpegaudioparse\gstmpegaudioparse.h" />
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-ugly\gst\mpegaudioparse\gstxingmux.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\..\..\..\..\..\Common.targets" />
