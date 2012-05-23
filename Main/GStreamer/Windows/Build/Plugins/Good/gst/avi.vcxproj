@@ -112,6 +112,9 @@
     <ClCompile Include="..\..\..\..\..\Source\gst-plugins-good\gst\avi\gstavisubtitle.c" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstbase.vcxproj">
+      <Project>{f987873b-2b88-4b1b-b627-f70df4f91e50}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Libraries\libgstriff.vcxproj">
       <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f09}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>

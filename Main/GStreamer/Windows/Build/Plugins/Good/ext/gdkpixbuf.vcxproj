@@ -114,6 +114,9 @@
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyLocalSatelliteAssemblies>false</CopyLocalSatelliteAssemblies>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-good\ext\gdk_pixbuf\gstgdkanimation.h" />

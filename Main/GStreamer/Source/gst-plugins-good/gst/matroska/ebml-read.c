@@ -30,11 +30,6 @@
 
 #include <math.h>
 
-/* NAN is supposed to be in math.h, Microsoft defines it in xmath.h */
-#ifdef _MSC_VER
-#include <xmath.h>
-#endif
-
 /* If everything goes wrong try 0.0/0.0 which should be NAN */
 #ifndef NAN
 #define NAN (0.0 / 0.0)
