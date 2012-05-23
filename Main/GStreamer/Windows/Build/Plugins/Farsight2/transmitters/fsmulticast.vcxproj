@@ -107,6 +107,9 @@
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstfarsight.vcxproj">
+      <Project>{eb5d7598-7014-42d3-886c-9b9ec38167c3}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Source\farsight2\transmitters\multicast\fs-multicast-stream-transmitter.h" />

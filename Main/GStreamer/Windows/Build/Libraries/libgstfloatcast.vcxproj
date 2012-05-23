@@ -143,6 +143,9 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ProjectReference Include="libgstnetbuffer.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f07}</Project>
+    </ProjectReference>
     <ProjectReference Include="libgstreamer.vcxproj">
       <Project>{f987873b-2b88-4b1b-b627-f70df4f91e49}</Project>
       <Private>false</Private>
