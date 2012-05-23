@@ -10,14 +10,9 @@ set PACKAGINGDIR=%ROOTDIR%\Packaging
 set LIBRARIESDIR=%ROOTDIR%\Libraries
 set DEPLOYMENTDIR=%ROOTDIR%\Deployment
 set PROPERTIESDIR=%ROOTDIR%\Properties
+set BINDIR=%BUILDDIR%\Windows\Win32\Release\bin
 
-set PKGDIR=%DEPLOYMENTDIR%\pkg
-set EXCLUDESFILE=pkg-excludes.txt
-
-set SHORTCUTFILE=%PKGDIR%\Run.bat
-
-REM MM-DD-YYYY
-set TODAYSDATE=%DATE:~4,2%-%DATE:~7,2%-%DATE:~10,4%
+set PKGDIR=%DEPLOYMENTDIR%\gstreamer
 
 REM call "%VS90COMNTOOLS%\vsvars32.bat"
 
@@ -25,5 +20,3 @@ cd /d "%MYDIR%"
 
 rmdir /S /Q "%PKGDIR%"
 mkdir "%PKGDIR%"
-
-call lib\excludes.bat

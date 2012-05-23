@@ -2,3 +2,4 @@
 *.sdf
 *.opensdf
 GStreamer.suo
+Main/GStreamer/Windows/Build/Bindings/DotNet/obj
