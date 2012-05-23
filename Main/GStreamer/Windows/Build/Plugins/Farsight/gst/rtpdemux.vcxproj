@@ -105,6 +105,9 @@
       <CopyLocalSatelliteAssemblies>true</CopyLocalSatelliteAssemblies>
       <ReferenceOutputAssembly>true</ReferenceOutputAssembly>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstrtp.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f10}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\Generated\gst-plugins-farsight\gst\rtpdemux\gstrtpdemux-marshal.c" />

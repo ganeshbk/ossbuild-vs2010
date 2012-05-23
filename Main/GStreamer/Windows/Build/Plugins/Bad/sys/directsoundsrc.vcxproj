@@ -112,6 +112,11 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\sys\directsound\gstdirectsoundsrc.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstaudio.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f01}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\..\..\..\..\..\Common.targets" />

@@ -111,6 +111,17 @@
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\sdl\sdlaudiosink.h" />
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-bad\ext\sdl\sdlvideosink.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstaudio.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f01}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstinterfaces.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f02}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\..\..\..\..\..\Common.targets" />
