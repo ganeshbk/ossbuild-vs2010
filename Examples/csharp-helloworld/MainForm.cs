@@ -57,7 +57,7 @@ namespace csharp_helloworld
             
             m_Pipeline.SetState(State.Playing);
             
-            // m_Pipeline.DebugToDotFile("graph"); // Save pipeline to graph.dot
+            m_Pipeline.DebugToDotFile("graph"); // Save pipeline to graph.dot
         }
 
         private void btnStop_Click(object sender, EventArgs e)
