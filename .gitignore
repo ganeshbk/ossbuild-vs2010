@@ -1,5 +1,10 @@
 *.vcxproj.user
+*.csproj.user
 *.sdf
 *.opensdf
-GStreamer.suo
+*.suo
+bin/
+obj/
 Main/GStreamer/Windows/Build/Bindings/DotNet/obj
+/Build/**
+/Deployment/**
