@@ -1067,6 +1067,15 @@ namespace Gst.Base {
 		}
 
 		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern bool gst_base_src_new_seamless_segment(IntPtr raw, IntPtr src, long start, long stop, long position);
+
+		public bool NewSeamlessSegment(Gst.Base.BaseSrc src, long start, long stop, long position) {
+			bool raw_ret = gst_base_src_new_seamless_segment(Handle, src == null ? IntPtr.Zero : src.Handle, start, stop, position);
+			bool ret = raw_ret;
+			return ret;
+		}
+
+		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
 		static extern int gst_base_src_wait_playing(IntPtr raw);
 
 		public Gst.FlowReturn WaitPlaying() {

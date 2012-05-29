@@ -63,6 +63,21 @@ namespace Gst.App {
 			}
 		}
 
+		[Gst.GLib.Property ("min-percent")]
+		public uint MinPercent {
+			get {
+				Gst.GLib.Value val = GetProperty ("min-percent");
+				uint ret = (uint) val;
+				val.Dispose ();
+				return ret;
+			}
+			set {
+				Gst.GLib.Value val = new Gst.GLib.Value(value);
+				SetProperty("min-percent", val);
+				val.Dispose ();
+			}
+		}
+
 		[Gst.GLib.Property ("min-latency")]
 		public long MinLatency {
 			get {

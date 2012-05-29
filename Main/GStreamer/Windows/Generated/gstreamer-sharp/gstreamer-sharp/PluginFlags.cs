@@ -12,6 +12,7 @@ namespace Gst {
 	public enum PluginFlags {
 
 		Cached = 1 << 0,
+		Blacklisted = 1 << 1,
 	}
 
 	internal class PluginFlagsGType {

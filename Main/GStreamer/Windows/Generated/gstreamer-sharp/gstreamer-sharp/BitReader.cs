@@ -67,6 +67,17 @@ namespace Gst.Base {
 		}
 
 		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern uint gst_bit_reader_get_size(IntPtr raw);
+
+		public uint Size { 
+			get {
+				uint raw_ret = gst_bit_reader_get_size(Handle);
+				uint ret = raw_ret;
+				return ret;
+			}
+		}
+
+		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
 		static extern bool gst_bit_reader_get_bits_uint32(IntPtr raw, out uint val, uint nbits);
 
 		public bool Get(out uint val, uint nbits) {

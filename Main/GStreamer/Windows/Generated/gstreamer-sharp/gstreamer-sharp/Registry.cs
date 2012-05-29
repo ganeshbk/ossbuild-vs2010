@@ -394,6 +394,17 @@ namespace Gst {
 			return ret;
 		}
 
+		[DllImport("libgstreamer-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern uint gst_registry_get_feature_list_cookie(IntPtr raw);
+
+		public uint FeatureListCookie { 
+			get {
+				uint raw_ret = gst_registry_get_feature_list_cookie(Handle);
+				uint ret = raw_ret;
+				return ret;
+			}
+		}
+
 #endregion
 #region Customized extensions
 #line 1 "Registry.custom"

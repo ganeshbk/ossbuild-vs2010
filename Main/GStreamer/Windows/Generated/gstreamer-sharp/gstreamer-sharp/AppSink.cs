@@ -371,7 +371,7 @@ namespace Gst.App {
 
 		public Gst.Buffer PullBuffer() {
 			IntPtr raw_ret = gst_app_sink_pull_buffer(Handle);
-			Gst.Buffer ret = Gst.MiniObject.GetObject(raw_ret) as Gst.Buffer;
+			Gst.Buffer ret = Gst.MiniObject.GetObject(raw_ret, true) as Gst.Buffer;
 			return ret;
 		}
 
@@ -380,7 +380,7 @@ namespace Gst.App {
 
 		public Gst.Buffer PullPreroll() {
 			IntPtr raw_ret = gst_app_sink_pull_preroll(Handle);
-			Gst.Buffer ret = Gst.MiniObject.GetObject(raw_ret) as Gst.Buffer;
+			Gst.Buffer ret = Gst.MiniObject.GetObject(raw_ret, true) as Gst.Buffer;
 			return ret;
 		}
 
@@ -411,7 +411,7 @@ namespace Gst.App {
 
 		public Gst.BufferList PullBufferList() {
 			IntPtr raw_ret = gst_app_sink_pull_buffer_list(Handle);
-			Gst.BufferList ret = Gst.MiniObject.GetObject(raw_ret) as Gst.BufferList;
+			Gst.BufferList ret = Gst.MiniObject.GetObject(raw_ret, true) as Gst.BufferList;
 			return ret;
 		}
 

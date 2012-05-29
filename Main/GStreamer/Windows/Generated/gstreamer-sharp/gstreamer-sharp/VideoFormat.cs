@@ -32,6 +32,8 @@ namespace Gst.Video {
 		Y444,
 		V210,
 		V216,
+		NV12,
+		NV21,
 	}
 
 	internal class VideoFormatGType {

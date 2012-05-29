@@ -455,6 +455,26 @@ namespace Gst {
 		}
 
 		[DllImport("libgstreamer-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern IntPtr gst_pad_peer_get_caps_reffed(IntPtr raw);
+
+		public Gst.Caps PeerGetCapsReffed() {
+			IntPtr raw_ret = gst_pad_peer_get_caps_reffed(Handle);
+			Gst.Caps ret = raw_ret == IntPtr.Zero ? null : (Gst.Caps) Gst.GLib.Opaque.GetOpaque (raw_ret, typeof (Gst.Caps), true);
+			return ret;
+		}
+
+		[DllImport("libgstreamer-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern IntPtr gst_pad_get_caps_reffed(IntPtr raw);
+
+		public Gst.Caps CapsReffed { 
+			get {
+				IntPtr raw_ret = gst_pad_get_caps_reffed(Handle);
+				Gst.Caps ret = raw_ret == IntPtr.Zero ? null : (Gst.Caps) Gst.GLib.Opaque.GetOpaque (raw_ret, typeof (Gst.Caps), true);
+				return ret;
+			}
+		}
+
+		[DllImport("libgstreamer-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
 		static extern int gst_pad_link(IntPtr raw, IntPtr sinkpad);
 
 		public Gst.PadLinkReturn Link(Gst.Pad sinkpad) {

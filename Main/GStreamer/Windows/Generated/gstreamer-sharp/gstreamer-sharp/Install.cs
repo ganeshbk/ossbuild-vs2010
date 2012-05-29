@@ -10,11 +10,11 @@ namespace Gst.PbUtils {
 	public partial class Install {
 
 		[DllImport("libgstpbutils-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
-		static extern int gst_install_plugins_async(IntPtr details, IntPtr ctx, Gst.PbUtilsSharp.InstallPluginsResultFuncNative func, IntPtr user_data);
+		static extern int gst_install_plugins_async(string[] details, IntPtr ctx, Gst.PbUtilsSharp.InstallPluginsResultFuncNative func, IntPtr user_data);
 
-		public static Gst.PbUtils.InstallPluginsReturn InstallPlugins(string details, Gst.PbUtils.InstallPluginsContext ctx, Gst.PbUtils.InstallPluginsResultFunc func) {
+		public static Gst.PbUtils.InstallPluginsReturn InstallPlugins(string[] details, Gst.PbUtils.InstallPluginsContext ctx, Gst.PbUtils.InstallPluginsResultFunc func) {
 			Gst.PbUtilsSharp.InstallPluginsResultFuncWrapper func_wrapper = new Gst.PbUtilsSharp.InstallPluginsResultFuncWrapper (func);
-			int raw_ret = gst_install_plugins_async(Gst.GLib.Marshaller.StringToPtrGStrdup(details), ctx == null ? IntPtr.Zero : ctx.Handle, func_wrapper.NativeDelegate, IntPtr.Zero);
+			int raw_ret = gst_install_plugins_async(details, ctx == null ? IntPtr.Zero : ctx.Handle, func_wrapper.NativeDelegate, IntPtr.Zero);
 			Gst.PbUtils.InstallPluginsReturn ret = (Gst.PbUtils.InstallPluginsReturn) raw_ret;
 			return ret;
 		}
@@ -42,10 +42,10 @@ namespace Gst.PbUtils {
 		}
 
 		[DllImport("libgstpbutils-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
-		static extern int gst_install_plugins_sync(IntPtr details, IntPtr ctx);
+		static extern int gst_install_plugins_sync(string[] details, IntPtr ctx);
 
-		public static Gst.PbUtils.InstallPluginsReturn InstallPlugins(string details, Gst.PbUtils.InstallPluginsContext ctx) {
-			int raw_ret = gst_install_plugins_sync(Gst.GLib.Marshaller.StringToPtrGStrdup(details), ctx == null ? IntPtr.Zero : ctx.Handle);
+		public static Gst.PbUtils.InstallPluginsReturn InstallPlugins(string[] details, Gst.PbUtils.InstallPluginsContext ctx) {
+			int raw_ret = gst_install_plugins_sync(details, ctx == null ? IntPtr.Zero : ctx.Handle);
 			Gst.PbUtils.InstallPluginsReturn ret = (Gst.PbUtils.InstallPluginsReturn) raw_ret;
 			return ret;
 		}

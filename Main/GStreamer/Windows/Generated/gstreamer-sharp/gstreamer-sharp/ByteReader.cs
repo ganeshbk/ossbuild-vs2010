@@ -287,10 +287,10 @@ namespace Gst.Base {
 		}
 
 		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
-		static extern bool gst_byte_reader_peek_int16_le(IntPtr raw, out short val);
+		static extern bool gst_byte_reader_get_int16_be(IntPtr raw, out short val);
 
-		public bool PeekInt16Le(out short val) {
-			bool raw_ret = gst_byte_reader_peek_int16_le(Handle, out val);
+		public bool GetInt16Be(out short val) {
+			bool raw_ret = gst_byte_reader_get_int16_be(Handle, out val);
 			bool ret = raw_ret;
 			return ret;
 		}
@@ -338,15 +338,6 @@ namespace Gst.Base {
 
 		public bool PeekUInt64Be(out ulong val) {
 			bool raw_ret = gst_byte_reader_peek_uint64_be(Handle, out val);
-			bool ret = raw_ret;
-			return ret;
-		}
-
-		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
-		static extern bool gst_byte_reader_get_int16_be(IntPtr raw, out short val);
-
-		public bool GetInt16Be(out short val) {
-			bool raw_ret = gst_byte_reader_get_int16_be(Handle, out val);
 			bool ret = raw_ret;
 			return ret;
 		}
@@ -442,6 +433,17 @@ namespace Gst.Base {
 		}
 
 		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern uint gst_byte_reader_get_size(IntPtr raw);
+
+		public uint Size { 
+			get {
+				uint raw_ret = gst_byte_reader_get_size(Handle);
+				uint ret = raw_ret;
+				return ret;
+			}
+		}
+
+		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
 		static extern bool gst_byte_reader_get_float64_le(IntPtr raw, out double val);
 
 		public bool GetFloat64Le(out double val) {
@@ -473,6 +475,15 @@ namespace Gst.Base {
 
 		public bool PeekUInt24Le(out uint val) {
 			bool raw_ret = gst_byte_reader_peek_uint24_le(Handle, out val);
+			bool ret = raw_ret;
+			return ret;
+		}
+
+		[DllImport("libgstbase-0.10.dll", CallingConvention = CallingConvention.Cdecl)]
+		static extern bool gst_byte_reader_peek_int16_le(IntPtr raw, out short val);
+
+		public bool PeekInt16Le(out short val) {
+			bool raw_ret = gst_byte_reader_peek_int16_le(Handle, out val);
 			bool ret = raw_ret;
 			return ret;
 		}

@@ -17,6 +17,7 @@ namespace Gst {
 		NewSegment = 102,
 		Tag = 118,
 		BufferSize = 134,
+		SinkMessage = 150,
 		Qos = 241,
 		Seek = 257,
 		Navigation = 273,

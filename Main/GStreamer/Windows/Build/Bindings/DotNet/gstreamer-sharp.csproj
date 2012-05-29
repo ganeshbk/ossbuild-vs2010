@@ -53,6 +53,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="generated\ByteWriter.cs" />
     <None Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\coreplugins\fileindex.cs">
       <Link>coreplugins\fileindex.cs</Link>
     </None>

@@ -195,7 +195,7 @@ public Gst.Structure Structure {
 static extern IntPtr gst_message_new_eos (IntPtr src);
 
 public static Message NewEos (Gst.Object src) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_eos (src.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_eos (src != null ? src.Handle : IntPtr.Zero), true);
 
   return msg;
 }
@@ -231,7 +231,7 @@ public static Message NewError (Gst.Object src, Gst.CoreError error, string mess
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -253,7 +253,7 @@ public static Message NewError (Gst.Object src, Gst.StreamError error, string me
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -275,7 +275,7 @@ public static Message NewError (Gst.Object src, Gst.LibraryError error, string m
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -296,7 +296,7 @@ public static Message NewError (Gst.Object src, Gst.ResourceError error, string 
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_error (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -369,7 +369,7 @@ public static Message NewWarning (Gst.Object src, Gst.CoreError error, string me
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -391,7 +391,7 @@ public static Message NewWarning (Gst.Object src, Gst.StreamError error, string 
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -413,7 +413,7 @@ public static Message NewWarning (Gst.Object src, Gst.LibraryError error, string
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -435,7 +435,7 @@ public static Message NewWarning (Gst.Object src, Gst.ResourceError error, strin
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_warning (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -508,7 +508,7 @@ public static Message NewInfo (Gst.Object src, Gst.CoreError error, string messa
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -530,7 +530,7 @@ public static Message NewInfo (Gst.Object src, Gst.StreamError error, string mes
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -552,7 +552,7 @@ public static Message NewInfo (Gst.Object src, Gst.LibraryError error, string me
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -574,7 +574,7 @@ public static Message NewInfo (Gst.Object src, Gst.ResourceError error, string m
 
   IntPtr raw_ptr = (debug == null) ? IntPtr.Zero : Gst.GLib.Marshaller.StringToPtrGStrdup (debug);
 
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src.Handle, ref err, raw_ptr), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_info (src != null ? src.Handle : IntPtr.Zero, ref err, raw_ptr), true);
 
   Gst.GLib.Marshaller.Free (raw_ptr);
   err.Unset ();
@@ -645,15 +645,31 @@ static extern IntPtr gst_message_new_tag_full (IntPtr src, IntPtr pad, IntPtr ta
 static extern IntPtr gst_tag_list_copy (IntPtr handle);
 
 public static Message NewTag (Gst.Object src, TagList tags) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_tag (src.Handle, gst_tag_list_copy (tags.Handle)), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_tag (src != null ? src.Handle : IntPtr.Zero, gst_tag_list_copy (tags.Handle)), true);
 
   return msg;
 }
 
 public static Message NewTag (Gst.Object src, Gst.Pad pad, TagList tags) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_tag_full (src.Handle, pad.Handle, gst_tag_list_copy (tags.Handle)), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_tag_full (src != null ? src.Handle : IntPtr.Zero, pad.Handle, gst_tag_list_copy (tags.Handle)), true);
 
   return msg;
+}
+
+[DllImport("libgstreamer-0.10.dll") ]
+static extern void gst_message_parse_tag (IntPtr msg, out IntPtr tags);
+
+public void ParseTag (out TagList tags) {
+  if (Type != MessageType.Tag)
+    throw new ArgumentException ();
+
+  IntPtr raw_ptr;
+
+  gst_message_parse_tag (Handle, out raw_ptr);
+  if (raw_ptr == IntPtr.Zero)
+    tags = null;
+  else
+    tags = (TagList) Gst.GLib.Opaque.GetOpaque (raw_ptr, typeof (TagList), true);
 }
 
 [DllImport ("libgstreamer-0.10.dll") ]
@@ -681,7 +697,7 @@ public void ParseTag (out Gst.Pad pad, out TagList tags) {
 static extern IntPtr gst_message_new_buffering (IntPtr src, int percent);
 
 public static Message NewBuffering (Gst.Object src, int percent) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_buffering (src.Handle, percent), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_buffering (src != null ? src.Handle : IntPtr.Zero, percent), true);
 
   return msg;
 }
@@ -722,7 +738,7 @@ public void ParseBufferingStats (out Gst.BufferingMode mode, out int avg_in, out
 static extern IntPtr gst_message_new_state_changed (IntPtr src, State oldstate, State newstate, State pendingstate);
 
 public static Message NewStateChanged (Gst.Object src, State oldstate, State newstate, State pendingstate) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_state_changed (src.Handle, oldstate, newstate, pendingstate), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_state_changed (src != null ? src.Handle : IntPtr.Zero, oldstate, newstate, pendingstate), true);
 
   return msg;
 }
@@ -741,7 +757,7 @@ public void ParseStateChanged (out State oldstate, out State newstate, out State
 static extern IntPtr gst_message_new_state_dirty (IntPtr src);
 
 public static Message NewStateDirty (Gst.Object src) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_state_dirty (src.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_state_dirty (src != null ? src.Handle : IntPtr.Zero), true);
   return msg;
 }
 
@@ -749,7 +765,7 @@ public static Message NewStateDirty (Gst.Object src) {
 static extern IntPtr gst_message_new_clock_provide (IntPtr src, IntPtr clock, bool ready);
 
 public static Message NewClockProvide (Gst.Object src, Gst.Clock clock, bool ready) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_clock_provide (src.Handle, clock.Handle, ready), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_clock_provide (src != null ? src.Handle : IntPtr.Zero, clock.Handle, ready), true);
 
   return msg;
 }
@@ -772,7 +788,7 @@ public void ParseClockProvide (out Gst.Clock clock, out bool ready) {
 static extern IntPtr gst_message_new_clock_lost (IntPtr src, IntPtr clock);
 
 public static Message NewClockLost (Gst.Object src, Gst.Clock clock) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_clock_lost (src.Handle, clock.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_clock_lost (src != null ? src.Handle : IntPtr.Zero, clock.Handle), true);
 
   return msg;
 }
@@ -795,7 +811,7 @@ public void ParseClockLost (out Gst.Clock clock) {
 static extern IntPtr gst_message_new_new_clock (IntPtr src, IntPtr clock);
 
 public static Message NewNewClock (Gst.Object src, Gst.Clock clock) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_new_clock (src.Handle, clock.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_new_clock (src != null ? src.Handle : IntPtr.Zero, clock.Handle), true);
 
   return msg;
 }
@@ -818,7 +834,7 @@ public void ParseNewClock (out Gst.Clock clock) {
 static extern IntPtr gst_message_new_application (IntPtr src, IntPtr structure);
 
 public static Message NewApplication (Gst.Object src, Gst.Structure structure) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_application (src.Handle, (structure != null) ? structure.Handle : IntPtr.Zero), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_application (src != null ? src.Handle : IntPtr.Zero, (structure != null) ? structure.Handle : IntPtr.Zero), true);
   msg.cached_structure = structure;
   structure.FreeNative = false;
 
@@ -829,7 +845,7 @@ public static Message NewApplication (Gst.Object src, Gst.Structure structure) {
 static extern IntPtr gst_message_new_element (IntPtr src, IntPtr structure);
 
 public static Message NewElement (Gst.Object src, Gst.Structure structure) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_element (src.Handle, (structure != null) ? structure.Handle : IntPtr.Zero), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_element (src != null ? src.Handle : IntPtr.Zero, (structure != null) ? structure.Handle : IntPtr.Zero), true);
   msg.cached_structure = structure;
   structure.FreeNative = false;
 
@@ -840,7 +856,7 @@ public static Message NewElement (Gst.Object src, Gst.Structure structure) {
 static extern IntPtr gst_message_new_custom (Gst.MessageType type, IntPtr src, IntPtr structure);
 
 public static Message NewCustom (Gst.MessageType type, Gst.Object src, Gst.Structure structure) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_custom (type, src.Handle, (structure != null) ? structure.Handle : IntPtr.Zero), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_custom (type, src != null ? src.Handle : IntPtr.Zero, (structure != null) ? structure.Handle : IntPtr.Zero), true);
   msg.cached_structure = structure;
   structure.FreeNative = false;
 
@@ -851,7 +867,7 @@ public static Message NewCustom (Gst.MessageType type, Gst.Object src, Gst.Struc
 static extern IntPtr gst_message_new_segment_start (IntPtr src, Gst.Format format, long position);
 
 public static Message NewSegmentStart (Gst.Object src, Gst.Format format, long position) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_segment_start (src.Handle, format, position), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_segment_start (src != null ? src.Handle : IntPtr.Zero, format, position), true);
 
   return msg;
 }
@@ -870,7 +886,7 @@ public void ParseSegmentStart (out Gst.Format format, out long position) {
 static extern IntPtr gst_message_new_segment_done (IntPtr src, Gst.Format format, long position);
 
 public static Message NewSegmentDone (Gst.Object src, Gst.Format format, long position) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_segment_done (src.Handle, format, position), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_segment_done (src != null ? src.Handle : IntPtr.Zero, format, position), true);
 
   return msg;
 }
@@ -889,7 +905,7 @@ public void ParseSegmentDone (out Gst.Format format, out long position) {
 static extern IntPtr gst_message_new_duration (IntPtr src, Gst.Format format, long duration);
 
 public static Message NewDuration (Gst.Object src, Gst.Format format, long duration) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_duration (src.Handle, format, duration), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_duration (src != null ? src.Handle : IntPtr.Zero, format, duration), true);
 
   return msg;
 }
@@ -908,7 +924,7 @@ public void ParseDuration (out Gst.Format format, out long duration) {
 static extern IntPtr gst_message_new_latency (IntPtr src);
 
 public static Message NewLatency (Gst.Object src) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_latency (src.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_latency (src != null ? src.Handle : IntPtr.Zero), true);
 
   return msg;
 }
@@ -917,7 +933,7 @@ public static Message NewLatency (Gst.Object src) {
 static extern IntPtr gst_message_new_async_start (IntPtr src, bool new_base_time);
 
 public static Message NewAsyncStart (Gst.Object src, bool new_base_time) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_async_start (src.Handle, new_base_time), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_async_start (src != null ? src.Handle : IntPtr.Zero, new_base_time), true);
 
   return msg;
 }
@@ -936,7 +952,7 @@ public void ParseAsyncStart (out bool new_base_time) {
 static extern IntPtr gst_message_new_async_done (IntPtr src);
 
 public static Message NewAsyncDone (Gst.Object src) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_async_done (src.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_async_done (src != null ? src.Handle : IntPtr.Zero), true);
 
   return msg;
 }
@@ -945,7 +961,7 @@ public static Message NewAsyncDone (Gst.Object src) {
 static extern IntPtr gst_message_new_structure_change (IntPtr src, StructureChangeType type, IntPtr owner, bool busy);
 
 public static Message NewStructureChange (Gst.Object src, StructureChangeType type, Gst.Element owner, bool busy) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_structure_change (src.Handle, type, owner.Handle, busy), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_structure_change (src != null ? src.Handle : IntPtr.Zero, type, owner.Handle, busy), true);
 
   return msg;
 }
@@ -971,7 +987,7 @@ static Message () {
 static extern IntPtr gst_message_new_step_done (IntPtr src, Gst.Format format, ulong amount, double rate, bool flush, bool intermediate, ulong duration, bool eos);
 
 public static Message NewStepDone (Gst.Object src, Gst.Format format, ulong amount, double rate, bool flush, bool intermediate, ulong duration, bool eos) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_step_done (src.Handle, format, amount, rate, flush, intermediate, duration, eos), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_step_done (src != null ? src.Handle : IntPtr.Zero, format, amount, rate, flush, intermediate, duration, eos), true);
 
   return msg;
 }
@@ -990,7 +1006,7 @@ public void ParseStepDone (out Gst.Format format, out ulong amount, out double r
 static extern IntPtr gst_message_new_step_start (IntPtr src, bool active, Gst.Format format, ulong amount, double rate, bool flush, bool intermediate);
 
 public static Message NewStepDone (Gst.Object src, bool active, Gst.Format format, ulong amount, double rate, bool flush, bool intermediate) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_step_start (src.Handle, active, format, amount, rate, flush, intermediate), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_step_start (src != null ? src.Handle : IntPtr.Zero, active, format, amount, rate, flush, intermediate), true);
 
   return msg;
 }
@@ -1009,7 +1025,7 @@ public void ParseStepStart (out bool active, out Gst.Format format, out ulong am
 static extern IntPtr gst_message_new_stream_status (IntPtr src, StreamStatusType type, IntPtr owner);
 
 public static Message NewStreamStatus (Gst.Object src, StreamStatusType type, Gst.Element owner) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_stream_status (src.Handle, type, owner.Handle), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_stream_status (src != null ? src.Handle : IntPtr.Zero, type, owner.Handle), true);
 
   return msg;
 }
@@ -1031,7 +1047,7 @@ public void ParseStreamStatus (out StreamStatusType type, out Gst.Element owner)
 static extern IntPtr gst_message_new_request_state (IntPtr src, Gst.State state);
 
 public static Message NewRequestState (Gst.Object src, Gst.State state) {
-  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_request_state (src.Handle, state), true);
+  Message msg = (Message) Gst.MiniObject.GetObject (gst_message_new_request_state (src != null ? src.Handle : IntPtr.Zero, state), true);
 
   return msg;
 }
