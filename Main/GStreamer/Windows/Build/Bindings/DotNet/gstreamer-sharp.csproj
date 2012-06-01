@@ -53,7 +53,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="generated\ByteWriter.cs" />
     <None Include="..\..\..\..\Source\gstreamer-sharp\gstreamer-sharp\coreplugins\fileindex.cs">
       <Link>coreplugins\fileindex.cs</Link>
     </None>
@@ -152,6 +151,9 @@
     </Compile>
     <Compile Include="..\..\..\Generated\gstreamer-sharp\gstreamer-sharp\ByteReader.cs">
       <Link>generated\ByteReader.cs</Link>
+    </Compile>
+    <Compile Include="..\..\..\Generated\gstreamer-sharp\gstreamer-sharp\ByteWriter.cs">
+      <Link>generated\ByteWriter.cs</Link>
     </Compile>
     <Compile Include="..\..\..\Generated\gstreamer-sharp\gstreamer-sharp\Caps.cs">
       <Link>generated\Caps.cs</Link>
