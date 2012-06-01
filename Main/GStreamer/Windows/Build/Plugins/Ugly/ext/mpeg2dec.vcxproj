@@ -108,6 +108,11 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\Source\gst-plugins-ugly\ext\mpeg2dec\gstmpeg2dec.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\libgstvideo.vcxproj">
+      <Project>{ab87873b-2b88-4b1b-b627-f70df4f91f13}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\..\..\..\..\..\..\Common.targets" />
