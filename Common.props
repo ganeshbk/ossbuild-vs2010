@@ -11,7 +11,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
     <Header_Installer_Tool>
-      <CommandLineTemplate>if not exist $(OutDir)include\[ModuleName]\NUL mkdir "$(OutDir)include\[ModuleName]"
+      <CommandLineTemplate>if not exist "$(OutDir)include\[ModuleName]\NUL" mkdir "$(OutDir)include\[ModuleName]"
 copy /B /Y [AdditionalOptions] "%(FullPath)" "$(OutDir)include\[ModuleName]"</CommandLineTemplate>
       <Outputs>$(OutDir)include\%(Header_Installer_Tool.ModuleName)\%(Filename)%(Extension)</Outputs>
     </Header_Installer_Tool>
@@ -38,7 +38,7 @@ if /I "%(UseCustomOutputPath)" == "true" goto doCustom
 goto doDefault
 
 :doDefault
-if not exist $(IntDir)%(SubDirOutput)\NUL mkdir "$(IntDir)%(SubDirOutput)"
+if not exist "$(IntDir)%(SubDirOutput)\NUL" mkdir "$(IntDir)%(SubDirOutput)"
 sed.exe [Substitute] [AdditionalOptions] "%(FullPath)" &gt; "$(IntDir)%(SubDirOutput)\%(OutputFileName)"
 goto done
 
