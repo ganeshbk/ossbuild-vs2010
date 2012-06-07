@@ -23,7 +23,10 @@ namespace csharp_helloworld
             // Create a main loop for GLib, run it in a separate thread
             m_GLibMainLoop = new Gst.GLib.MainLoop();
             m_GLibThread = new System.Threading.Thread(m_GLibMainLoop.Run);
+            m_GLibThread.Name = "GLibMainLoop";
             m_GLibThread.Start();
+
+            System.Threading.Thread.CurrentThread.Name = "WinForms";
 
             CreatePipeline();
         }
