@@ -68,8 +68,7 @@ namespace Gst {
 
     IntPtr handle;
     bool disposed = false;
-    static Hashtable Objects = new Hashtable();
-
+    
     ~MiniObject () {
       Dispose ();
     }
@@ -82,18 +81,14 @@ namespace Gst {
         return;
 
       disposed = true;
-      lock (typeof (MiniObject)) {
-        if (handle != IntPtr.Zero) {
-          Objects.Remove (handle);
-          try {
-            gst_mini_object_unref (handle);
-          } catch (Exception e) {
-            Console.WriteLine ("Exception while disposing a " + this + " in Gtk#");
-            throw e;
-          }
-          handle = IntPtr.Zero;
-        }
+      try {
+        gst_mini_object_unref (handle);
+      } catch (Exception e) {
+        Console.WriteLine ("Exception while disposing a " + this + " in Gtk#");
+        throw e;
       }
+      handle = IntPtr.Zero;
+        
       GC.SuppressFinalize (this);
     }
 
@@ -104,31 +99,13 @@ namespace Gst {
       if (o == IntPtr.Zero)
         return null;
 
-      MiniObject obj = null;
-      lock (typeof (MiniObject)) {
-        WeakReference weak_ref = Objects[o] as WeakReference;
-
-        if (weak_ref != null && weak_ref.IsAlive)
-          obj = weak_ref.Target as MiniObject;
-
-        if (obj == null)
-          obj = Objects[o] as MiniObject;
-      }
-
-      if (obj != null && obj.handle == o) {
-        if (owned_ref)
-          gst_mini_object_unref (obj.handle);
-        obj.disposed = false;
-        return obj;
-      }
-
-      obj = CreateObject (o);
+      MiniObject obj = CreateObject (o);
       if (obj == null)
         return null;
 
       if (!owned_ref)
         gst_mini_object_ref (obj.Handle);
-      Objects [o] = new WeakReference (obj);
+      
       return obj;
     }
 
@@ -332,19 +309,13 @@ namespace Gst {
 
     protected virtual void CreateNativeObject () {
       Raw = gst_mini_object_new (LookupGType ().Val);
-      Objects [handle] = this;
     }
 
     protected virtual IntPtr Raw {
       get {
         return handle;
       } set {
-        if (handle != IntPtr.Zero)
-          Objects.Remove (handle);
         handle = value;
-        if (value == IntPtr.Zero)
-          return;
-        Objects [value] = new WeakReference (this);
       }
     }
 
