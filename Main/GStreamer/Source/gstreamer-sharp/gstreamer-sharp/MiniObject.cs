@@ -67,10 +67,20 @@ namespace Gst {
     }
 
     IntPtr handle;
-    bool disposed = false;
+
+    /// <summary>
+    /// Number of 'users' of this MiniObject. The count is increased by one
+    /// every time GetObject() returns this instance. Purpose is to avoid the
+    /// situation where two pieces of code receive the same instance, and one
+    /// of them calls .Dispose() on it.
+    /// When users = 0, the object is disposed.
+    /// </summary>
+    int users = 1;
     static Hashtable Objects = new Hashtable();
 
     ~MiniObject () {
+      if (users > 1)
+        users = 1;
       Dispose ();
     }
 
@@ -78,23 +88,27 @@ namespace Gst {
     static extern void gst_mini_object_unref (IntPtr raw);
 
     public virtual void Dispose () {
-      if (disposed)
+      if (users == 0)
         return;
 
-      disposed = true;
-      lock (typeof (MiniObject)) {
-        if (handle != IntPtr.Zero) {
-          Objects.Remove (handle);
-          try {
-            gst_mini_object_unref (handle);
-          } catch (Exception e) {
-            Console.WriteLine ("Exception while disposing a " + this + " in Gtk#");
-            throw e;
+      lock (typeof(MiniObject))
+      {
+        users--;
+        if (users == 0)
+        {
+          if (handle != IntPtr.Zero) {
+            Objects.Remove (handle);
+            try {
+              gst_mini_object_unref (handle);
+            } catch (Exception e) {
+              Console.WriteLine ("Exception while disposing a " + this + " in Gtk#");
+              throw e;
+            }
+            handle = IntPtr.Zero;
           }
-          handle = IntPtr.Zero;
+          GC.SuppressFinalize(this);
         }
       }
-      GC.SuppressFinalize (this);
     }
 
     [DllImport ("libgstreamer-0.10.dll") ]
@@ -113,13 +127,13 @@ namespace Gst {
 
         if (obj == null)
           obj = Objects[o] as MiniObject;
-      }
-
-      if (obj != null && obj.handle == o) {
-        if (owned_ref)
-          gst_mini_object_unref (obj.handle);
-        obj.disposed = false;
-        return obj;
+      
+        if (obj != null && obj.handle == o) {
+          if (owned_ref)
+            gst_mini_object_unref (obj.handle);
+          obj.users++;
+          return obj;
+        }
       }
 
       obj = CreateObject (o);
