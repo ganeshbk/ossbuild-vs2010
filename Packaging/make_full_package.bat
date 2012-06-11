@@ -3,6 +3,10 @@
 
 call lib\env.bat
 
+set PKGDIR=%DEPLOYMENTDIR%\gstreamer
+rmdir /S /Q "%PKGDIR%"
+mkdir "%PKGDIR%"
+
 mkdir "%PKGDIR%\bin"
 mkdir "%PKGDIR%\bin\plugins"
 mkdir "%PKGDIR%\lib"
