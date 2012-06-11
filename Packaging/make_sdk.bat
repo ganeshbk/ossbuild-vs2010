@@ -3,7 +3,7 @@
 
 call lib\env.bat
 
-set PKGDIR=%DEPLOYMENTDIR%\sdk
+set PKGDIR=%DEPLOYMENTDIR%\gstreamer-sdk
 rmdir /S /Q "%PKGDIR%"
 mkdir "%PKGDIR%"
 
