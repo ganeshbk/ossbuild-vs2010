@@ -12,11 +12,5 @@ set DEPLOYMENTDIR=%ROOTDIR%\Deployment
 set PROPERTIESDIR=%ROOTDIR%\Properties
 set BINDIR=%BUILDDIR%\Windows\Win32\Release\bin
 
-set PKGDIR=%DEPLOYMENTDIR%\gstreamer
-
-REM call "%VS90COMNTOOLS%\vsvars32.bat"
-
 cd /d "%MYDIR%"
 
-rmdir /S /Q "%PKGDIR%"
-mkdir "%PKGDIR%"
