@@ -11,10 +11,10 @@ namespace Gst {
 	[StructLayout(LayoutKind.Sequential)]
 	internal partial struct ElementDetails {
 
-		public string Longname;
-		public string Klass;
-		public string Description;
-		public string Author;
+		private IntPtr _longname;
+		private IntPtr _klass;
+		private IntPtr _description;
+		private IntPtr _author;
 		[MarshalAs (UnmanagedType.ByValArray, SizeConst=4)]
 		private IntPtr[] GstReserved;
 

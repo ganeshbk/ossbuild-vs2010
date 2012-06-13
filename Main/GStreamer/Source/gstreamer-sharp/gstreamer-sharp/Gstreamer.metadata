@@ -317,6 +317,10 @@
   <attr path="/api/namespace/object[@name='Element']/method[@cname='gst_element_lost_state_full']" name="name">LostState</attr>
   
   <attr path="/api/namespace/struct[@name='ElementDetails']" name="internal">1</attr>
+  <attr path="/api/namespace/struct[@name='ElementDetails']/field[@cname='longname']" name="type">gpointer</attr>
+  <attr path="/api/namespace/struct[@name='ElementDetails']/field[@cname='klass']" name="type">gpointer</attr>
+  <attr path="/api/namespace/struct[@name='ElementDetails']/field[@cname='description']" name="type">gpointer</attr>
+  <attr path="/api/namespace/struct[@name='ElementDetails']/field[@cname='author']" name="type">gpointer</attr>
 
   <attr path="/api/namespace/object[@name='ElementFactory']/method[@name='Make']/return-type" name="owned">true</attr>
   <attr path="/api/namespace/object[@name='ElementFactory']/method[@name='Create']/return-type" name="owned">true</attr>
