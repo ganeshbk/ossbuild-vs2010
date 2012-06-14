@@ -96,6 +96,16 @@ static GstStaticPadTemplate video_sink_factory =
         "width = (int) [ 16, 4096 ], "
         "height = (int) [ 16, 4096 ], "
         "framerate = (fraction) [ 0, MAX ]; "
+        "video/x-raw-rgb, "
+        "bpp = (int) 24, "
+        "depth = (int) 24, "
+        "endianness = (int) 4321, "
+        "red_mask = (int) 255, "
+        "green_mask = (int) 65280, "
+        "blue_mask = (int) 16711680, "
+        "width = (int) [ 16, 4096 ], "
+        "height = (int) [ 16, 4096 ], "
+        "framerate = (fraction) [ 0, MAX ]; "
         "image/jpeg, "
         "width = (int) [ 16, 4096 ], "
         "height = (int) [ 16, 4096 ], "
@@ -212,6 +222,40 @@ static GstStateChangeReturn gst_avi_mux_change_state (GstElement * element,
     GstStateChange transition);
 
 static GstElementClass *parent_class = NULL;
+
+/* Invert DIB buffers */
+static inline void
+swap_line (guint8 * d1, guint8 * d2, guint8 * tmp, gint bytes)
+{
+  memcpy (tmp, d1, bytes);
+  memcpy (d1, d2, bytes);
+  memcpy (d2, tmp, bytes);
+}
+
+static GstBuffer *
+gst_avi_mux_invert_dib(const gst_riff_strf_vids *vids, GstBuffer *buf)
+{
+  gint y, h, stride;
+  guint8 *tmp = NULL;
+  guint8 *data = GST_BUFFER_DATA (buf);
+
+  h = vids->height;
+  stride = vids->width * (vids->bit_cnt / 8);
+  
+  if (GST_BUFFER_SIZE (buf) < (stride * h)) {
+    GST_WARNING ("Buffer is smaller than reported Width x Height x Depth");
+    return buf;
+  }
+  
+  tmp = g_malloc (stride);
+
+  for (y = 0; y < h/2; y++)
+  {
+    swap_line(data + stride * y, data + stride * (h - 1 - y), tmp, stride);
+  }
+
+  g_free(tmp);
+}
 
 GType
 gst_avi_mux_get_type (void)
@@ -471,6 +515,7 @@ gst_avi_mux_vidsink_set_caps (GstPad * pad, GstCaps * vscaps)
 
   avipad->vids.width = width;
   avipad->vids.height = height;
+  avipad->vids.image_size = width * height;
 
   fps = gst_structure_get_value (structure, "framerate");
   if (fps == NULL || !GST_VALUE_HOLDS_FRACTION (fps))
@@ -478,6 +523,7 @@ gst_avi_mux_vidsink_set_caps (GstPad * pad, GstCaps * vscaps)
 
   avipad->parent.hdr.rate = gst_value_get_fraction_numerator (fps);
   avipad->parent.hdr.scale = gst_value_get_fraction_denominator (fps);
+  avipad->parent.hdr.fcc_handler = 0;
 
   /* (pixel) aspect ratio data, if any */
   par = gst_structure_get_value (structure, "pixel-aspect-ratio");
@@ -521,6 +567,19 @@ gst_avi_mux_vidsink_set_caps (GstPad * pad, GstCaps * vscaps)
       case GST_MAKE_FOURCC ('I', '4', '2', '0'):
         avipad->vids.bit_cnt = 12;
         break;
+    }
+  } else if (!strcmp (mimetype, "video/x-raw-rgb")) {
+    /* For raw RGB the compression is 0 but fcc_handler is DIB */
+    avipad->vids.compression = GST_MAKE_FOURCC (0x00, 0x00, 0x00, 0x00);
+    avipad->parent.hdr.fcc_handler = GST_MAKE_FOURCC ('D', 'I', 'B', ' ');
+    avipad->vids.bit_cnt = 24;
+    avipad->vids.image_size = width * height * 3;
+
+    if (width % 4 != 0)
+    {
+      /* Lines of the DIB image are supposed to be padded to 32 bit boundary.
+       * By supporting only widths multiple of 4, we avoid doing this trickery. */
+      goto refuse_caps;
     }
   } else {
     avipad->vids.bit_cnt = 24;
@@ -643,8 +702,9 @@ gst_avi_mux_vidsink_set_caps (GstPad * pad, GstCaps * vscaps)
     }
   }
 
-  avipad->parent.hdr.fcc_handler = avipad->vids.compression;
-  avipad->vids.image_size = avipad->vids.height * avipad->vids.width;
+  if (!avipad->parent.hdr.fcc_handler)
+    avipad->parent.hdr.fcc_handler = avipad->vids.compression;  
+  
   /* hm, maybe why avi only handles one stream well ... */
   avimux->avi_hdr.width = avipad->vids.width;
   avimux->avi_hdr.height = avipad->vids.height;
@@ -1924,10 +1984,17 @@ gst_avi_mux_do_buffer (GstAviMux * avimux, GstAviPad * avipad)
       gst_segment_to_running_time (&avipad->collect->segment,
       GST_FORMAT_TIME, GST_BUFFER_TIMESTAMP (data));
 
-  /* Prepend a special buffer to the first one for some formats */
   if (avipad->is_video) {
     GstAviVideoPad *vidpad = (GstAviVideoPad *) avipad;
+  
+    /* Have to invert raw DIB frames */
+    if (vidpad->vids.compression == 0)
+    {
+      data = gst_buffer_make_writable(data);
+      gst_avi_mux_invert_dib(&vidpad->vids, data);
+    }
 
+    /* Prepend a special buffer to the first one for some formats */
     if (vidpad->prepend_buffer) {
       GstBuffer *newdata = gst_buffer_merge (vidpad->prepend_buffer, data);
       gst_buffer_copy_metadata (newdata, data, GST_BUFFER_COPY_TIMESTAMPS);
