@@ -29,7 +29,8 @@ for /f %%i in ('"dir /b %PKGDIR%\lib"') do (
 )
 
 :: Depending on whether you are using GPL or LGPL build, remove unnecessary libs
-del "%PKGDIR%\lib\av*-gpl-*"
+del "%PKGDIR%\lib\*-gpl*"
+del "%PKGDIR%\bin\plugins\*-gpl*"
 
 @echo "Now running basic sanity check"
 cd "%PKGDIR%"
