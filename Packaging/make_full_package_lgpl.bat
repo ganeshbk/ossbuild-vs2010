@@ -3,7 +3,7 @@
 
 call lib\env.bat
 
-set PKGDIR=%DEPLOYMENTDIR%\gstreamer
+set PKGDIR=%DEPLOYMENTDIR%\gstreamer-lgpl
 rmdir /S /Q "%PKGDIR%"
 mkdir "%PKGDIR%"
 
@@ -31,6 +31,8 @@ for /f %%i in ('"dir /b %PKGDIR%\lib"') do (
 :: Depending on whether you are using GPL or LGPL build, remove unnecessary libs
 del "%PKGDIR%\lib\*-gpl*"
 del "%PKGDIR%\bin\plugins\*-gpl*"
+del "%PKGDIR%\lib\libx264*.dll"
+del "%PKGDIR%\bin\plugins\libgstx264*.dll"
 
 @echo "Now running basic sanity check"
 cd "%PKGDIR%"
