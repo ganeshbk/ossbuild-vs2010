@@ -21,6 +21,7 @@ namespace csharp_helloworld
             System.Environment.SetEnvironmentVariable("PATH", @"C:\Windows;"
                                                         + apppath + @"\gstreamer\lib;"
                                                         + apppath + @"\gstreamer\bin");
+            System.Environment.SetEnvironmentVariable("GST_REGISTRY", apppath + @"\gstreamer\bin\registry.bin");
 
             // These are for saving debug information.
             System.Environment.SetEnvironmentVariable("GST_DEBUG", "*:3");
