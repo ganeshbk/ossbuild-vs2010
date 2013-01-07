@@ -294,6 +294,8 @@ gst_rtp_jpeg_pay_init (GstRtpJPEGPay * pay, GstRtpJPEGPayClass * klass)
   pay->quant = DEFAULT_JPEG_QUANT;
   pay->type = DEFAULT_JPEG_TYPE;
   pay->buffer_list = DEFAULT_BUFFER_LIST;
+  pay->width = -1;
+  pay->height = -1;
 }
 
 static gboolean
@@ -302,27 +304,47 @@ gst_rtp_jpeg_pay_setcaps (GstBaseRTPPayload * basepayload, GstCaps * caps)
   GstStructure *caps_structure = gst_caps_get_structure (caps, 0);
   GstRtpJPEGPay *pay;
   gboolean res;
-  gint width = 0, height = 0;
+  gint width = -1, height = -1;
 
   pay = GST_RTP_JPEG_PAY (basepayload);
 
   /* these properties are not mandatory, we can get them from the SOF, if there
    * is one. */
   if (gst_structure_get_int (caps_structure, "height", &height)) {
-    if (height <= 0 || height > 2040)
+    if (height <= 0)
       goto invalid_dimension;
   }
   pay->height = height / 8;
 
   if (gst_structure_get_int (caps_structure, "width", &width)) {
-    if (width <= 0 || width > 2040)
+    if (width <= 0)
       goto invalid_dimension;
   }
-  pay->width = width / 8;
-
+  
+  if (height > 2040 || width > 2040)
+  {
+	pay->height = 0;
+	pay->width = 0;
+  } else {
+    pay->height = GST_ROUND_UP_8(height) / 8;
+	pay->width = GST_ROUND_UP_8(width) / 8;
+  }
+   
   gst_basertppayload_set_options (basepayload, "video", TRUE, "JPEG", 90000);
-  res = gst_basertppayload_set_outcaps (basepayload, NULL);
-
+  
+  if (pay->width == 0) {
+	gchar *dim;
+	
+	GST_DEBUG_OBJECT (pay,
+        "width or height are greater than 2040, adding x-dimensions to caps");
+    dim = g_strdup_printf ("%d,%d", width, height);
+    res = gst_basertppayload_set_outcaps (basepayload, "x-dimensions",
+        G_TYPE_STRING, dim, NULL);
+    g_free (dim);
+  } else {
+    res = gst_basertppayload_set_outcaps (basepayload, NULL);
+  }
+  
   return res;
 
   /* ERRORS */
@@ -452,14 +474,23 @@ gst_rtp_jpeg_pay_read_sof (GstRtpJPEGPay * pay, const guint8 * data,
 
   GST_LOG_OBJECT (pay, "got dimensions %ux%u", height, width);
 
-  if (height == 0 || height > 2040)
+  if (height == 0)
     goto invalid_dimension;
-  if (width == 0 || width > 2040)
+  if (height > 2040)
+    height = 0;
+  if (width == 0)
     goto invalid_dimension;
-
-  pay->height = height / 8;
-  pay->width = width / 8;
-
+  if (width > 2040)
+    width = 0;
+	
+  if (height == 0 || width == 0) {
+    pay->height = 0;
+	pay->width = 0;
+  } else {
+    pay->height = GST_ROUND_UP_8(height) / 8;
+    pay->width = GST_ROUND_UP_8(width) / 8;
+  }
+	
   /* we only support 3 components */
   if (data[off++] != 3)
     goto bad_components;
@@ -683,7 +714,7 @@ gst_rtp_jpeg_pay_handle_buffer (GstBaseRTPPayload * basepayload,
 
   /* by now we should either have negotiated the width/height or the SOF header
    * should have filled us in */
-  if (pay->width == 0 || pay->height == 0)
+  if (pay->width < 0 || pay->height < 0)
     goto no_dimension;
 
   GST_LOG_OBJECT (pay, "header size %u", jpeg_header_size);
