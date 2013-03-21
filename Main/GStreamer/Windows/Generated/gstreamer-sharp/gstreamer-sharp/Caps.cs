@@ -269,16 +269,24 @@ public void MakeWritable() {
 
 private Hashtable structures = new Hashtable ();
 
-private void RemoveStructureReference (Structure s) {
-  structures.Remove (s.Handle);
-  s.CreateNativeCopy ();
+/* Note: CreateNativeCopy() is commented here because it causes
+ * a memory leak. The original purpose of this call is apparently
+ * some workaround to avoid releasing the native structure too early.
+ * Therefore this fix is probably wrong, even though it seems to work.
+ */
+
+private void RemoveStructureReference(Structure s)
+{
+    structures.Remove(s.Handle);
+    //s.CreateNativeCopy ();
 }
 
-private void RemoveStructureReferences () {
-  foreach (Structure s in structures.Values) {
-    s.CreateNativeCopy ();
-  }
-  structures.Clear ();
+private void RemoveStructureReferences()
+{
+    /*foreach (Structure s in structures.Values) {
+      s.CreateNativeCopy ();
+    }*/
+    structures.Clear();
 }
 
 [DllImport ("libgstreamer-0.10.dll") ]
