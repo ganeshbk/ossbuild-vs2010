@@ -666,7 +666,7 @@ gst_rtp_jpeg_depay_process (GstBaseRTPDepayload * depayload, GstBuffer * buf)
 
   if (gst_rtp_buffer_get_marker (buf)) {
     guint avail;
-    guint8 end[2];
+    guint8 end[2] = {0, 0};
     guint8 *data;
 
     /* last buffer take all data out of the adapter */
@@ -675,7 +675,9 @@ gst_rtp_jpeg_depay_process (GstBaseRTPDepayload * depayload, GstBuffer * buf)
 
     /* take the last bytes of the jpeg data to see if there is an EOI
      * marker */
-    gst_adapter_copy (rtpjpegdepay->adapter, end, avail - 2, 2);
+    if (avail >= 2) {
+      gst_adapter_copy (rtpjpegdepay->adapter, end, avail - 2, 2);
+    }
 
     if (end[0] != 0xff && end[1] != 0xd9) {
       GST_DEBUG_OBJECT (rtpjpegdepay, "no EOI marker, adding one");
